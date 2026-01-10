@@ -3,28 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ZHEDDER | Cyber Developer</title>
-    <meta name="description" content="Zhedder - Cyber development, learning, and rental services.">
+    <title>ZHEDDER | Tokyo Night Cyber Services</title>
+    <meta name="description" content="Zhedder - Cyber development, learning, and rental services with Tokyo Night aesthetic.">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Roboto+Mono:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Roboto+Mono:wght@300;400;500;700&family=Oxanium:wght@300;400;600;800&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary: #ff0000;
-            --primary-dark: #cc0000;
-            --primary-glow: rgba(255, 0, 0, 0.7);
-            --secondary: #000000;
-            --accent: #ff3333;
-            --accent-dark: #990000;
-            --cyber-blue: #00ffff;
-            --cyber-purple: #9900ff;
-            --light: #111111;
-            --gray: #666666;
-            --dark-gray: #222222;
-            --success: #00ff00;
+            --primary: #ff2a6d;
+            --primary-dark: #d91e5a;
+            --primary-glow: rgba(255, 42, 109, 0.7);
+            --secondary: #0d0221;
+            --accent: #00ceff;
+            --accent-dark: #0099cc;
+            --cyber-blue: #00ceff;
+            --cyber-purple: #8a2be2;
+            --neon-pink: #ff2a6d;
+            --neon-blue: #00ceff;
+            --neon-purple: #8a2be2;
+            --light: #111133;
+            --gray: #565676;
+            --dark-gray: #1a1a2e;
+            --success: #05d9e8;
             --border-radius: 0;
-            --shadow: 0 0 15px rgba(255, 0, 0, 0.5);
+            --shadow: 0 0 15px rgba(0, 206, 255, 0.5);
             --transition: all 0.3s ease;
-            --cyber-grid: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23000000' fill-opacity='0.1' fill-rule='evenodd'/%3E%3C/svg%3E");
+            --cyber-grid: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%2300ceff' fill-opacity='0.05' fill-rule='evenodd'/%3E%3C/svg%3E");
         }
 
         * {
@@ -34,11 +37,14 @@
         }
 
         body {
-            font-family: 'Roboto Mono', monospace;
+            font-family: 'Oxanium', 'Roboto Mono', monospace;
             line-height: 1.6;
             color: #ffffff;
             background-color: var(--secondary);
-            background-image: var(--cyber-grid);
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(255, 42, 109, 0.05) 0%, transparent 20%),
+                radial-gradient(circle at 90% 80%, rgba(0, 206, 255, 0.05) 0%, transparent 20%),
+                var(--cyber-grid);
             scroll-behavior: smooth;
             position: relative;
             overflow-x: hidden;
@@ -51,7 +57,9 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(transparent 65%, rgba(255, 0, 0, 0.03) 75%, rgba(255, 0, 0, 0.05) 80%, transparent 95%);
+            background: 
+                linear-gradient(90deg, rgba(13, 2, 33, 0.9) 0%, rgba(26, 26, 46, 0.7) 100%),
+                repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0, 206, 255, 0.03) 3px);
             pointer-events: none;
             z-index: -1;
         }
@@ -65,13 +73,14 @@
 
         /* Header & Navigation */
         header {
-            background-color: rgba(0, 0, 0, 0.9);
-            box-shadow: var(--shadow);
+            background-color: rgba(13, 2, 33, 0.95);
+            box-shadow: 0 0 20px rgba(0, 206, 255, 0.3);
             position: fixed;
             width: 100%;
             top: 0;
             z-index: 1000;
-            border-bottom: 1px solid var(--primary);
+            border-bottom: 1px solid var(--accent);
+            backdrop-filter: blur(10px);
         }
 
         .navbar {
@@ -84,22 +93,43 @@
         .logo {
             font-family: 'Orbitron', sans-serif;
             font-weight: 900;
-            font-size: 2rem;
+            font-size: 2.5rem;
             color: var(--primary);
             text-decoration: none;
-            text-shadow: 0 0 10px var(--primary-glow);
-            letter-spacing: 2px;
+            text-shadow: 
+                0 0 10px var(--primary-glow),
+                0 0 20px var(--primary-glow),
+                0 0 30px rgba(255, 42, 109, 0.5);
+            letter-spacing: 3px;
             position: relative;
+            animation: aura 4s ease-in-out infinite;
+            z-index: 1;
+        }
+
+        .logo::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 120%;
+            height: 120%;
+            background: radial-gradient(circle, rgba(255, 42, 109, 0.2) 0%, transparent 70%);
+            border-radius: 50%;
+            filter: blur(20px);
+            z-index: -1;
+            animation: aura-glow 4s ease-in-out infinite;
         }
 
         .logo::after {
             content: '//';
-            color: var(--cyber-blue);
+            color: var(--accent);
             margin-left: 10px;
+            text-shadow: 0 0 10px rgba(0, 206, 255, 0.7);
         }
 
         .logo span {
-            color: var(--cyber-blue);
+            color: var(--accent);
         }
 
         .nav-links {
@@ -116,21 +146,22 @@
             position: relative;
             font-family: 'Orbitron', sans-serif;
             font-size: 0.9rem;
+            padding: 5px 10px;
         }
 
         .nav-links a:hover {
             color: var(--primary);
-            text-shadow: 0 0 5px var(--primary-glow);
+            text-shadow: 0 0 10px var(--primary-glow);
         }
 
         .nav-links a::after {
             content: '';
             position: absolute;
             width: 0;
-            height: 1px;
+            height: 2px;
             bottom: -5px;
             left: 0;
-            background-color: var(--primary);
+            background: linear-gradient(90deg, var(--primary), var(--accent));
             transition: var(--transition);
             box-shadow: 0 0 5px var(--primary);
         }
@@ -146,12 +177,12 @@
             font-size: 1.5rem;
             color: var(--primary);
             cursor: pointer;
-            text-shadow: 0 0 5px var(--primary-glow);
+            text-shadow: 0 0 10px var(--primary-glow);
         }
 
         /* Hero Section */
         .hero {
-            padding: 180px 0 100px;
+            padding: 200px 0 100px;
             display: flex;
             align-items: center;
             min-height: 100vh;
@@ -166,9 +197,11 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: radial-gradient(circle at 20% 50%, rgba(255, 0, 0, 0.1) 0%, transparent 50%),
-                        radial-gradient(circle at 80% 20%, rgba(0, 255, 255, 0.05) 0%, transparent 50%);
+            background: 
+                radial-gradient(circle at 20% 50%, rgba(255, 42, 109, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(0, 206, 255, 0.1) 0%, transparent 50%);
             pointer-events: none;
+            z-index: -1;
         }
 
         .hero-content {
@@ -199,13 +232,18 @@
             font-size: 4rem;
             line-height: 1.2;
             margin-bottom: 20px;
-            text-shadow: 0 0 15px var(--primary-glow);
+            text-shadow: 0 0 15px rgba(0, 206, 255, 0.5);
             letter-spacing: 3px;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            position: relative;
         }
 
         .hero h1 span {
             color: var(--primary);
             position: relative;
+            text-shadow: 0 0 20px var(--primary-glow);
         }
 
         .hero h1 span::after {
@@ -215,42 +253,46 @@
             left: 0;
             width: 100%;
             height: 3px;
-            background-color: var(--primary);
+            background: linear-gradient(90deg, var(--primary), var(--accent));
             box-shadow: 0 0 10px var(--primary);
         }
 
         .tagline {
             font-size: 1.8rem;
-            color: var(--cyber-blue);
+            color: var(--accent);
             margin-bottom: 30px;
             font-family: 'Orbitron', sans-serif;
-            text-shadow: 0 0 5px rgba(0, 255, 255, 0.5);
+            text-shadow: 0 0 10px rgba(0, 206, 255, 0.5);
         }
 
         .hero p {
             font-size: 1.1rem;
             margin-bottom: 40px;
-            color: #cccccc;
+            color: #a0a0ff;
             max-width: 600px;
             line-height: 1.8;
+            background: rgba(13, 2, 33, 0.7);
+            padding: 20px;
+            border-left: 3px solid var(--primary);
         }
 
         .btn {
             display: inline-block;
             padding: 15px 35px;
-            background-color: transparent;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
             color: white;
             border-radius: var(--border-radius);
             text-decoration: none;
             font-weight: 600;
             transition: var(--transition);
-            border: 2px solid var(--primary);
+            border: none;
             font-family: 'Orbitron', sans-serif;
             letter-spacing: 1px;
             position: relative;
             overflow: hidden;
             z-index: 1;
             text-transform: uppercase;
+            box-shadow: 0 0 15px rgba(255, 42, 109, 0.5);
         }
 
         .btn::before {
@@ -260,7 +302,7 @@
             left: -100%;
             width: 100%;
             height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 0, 0, 0.4), transparent);
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
             transition: left 0.7s;
             z-index: -1;
         }
@@ -270,36 +312,29 @@
         }
 
         .btn:hover {
-            background-color: rgba(255, 0, 0, 0.2);
-            box-shadow: 0 0 20px rgba(255, 0, 0, 0.7);
             transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(255, 42, 109, 0.7);
         }
 
         .btn-outline {
-            background-color: transparent;
-            color: var(--primary);
+            background: transparent;
+            color: var(--accent);
+            border: 2px solid var(--accent);
             margin-left: 15px;
         }
 
         .btn-outline:hover {
-            color: white;
-        }
-
-        .btn-cyber {
-            border-color: var(--cyber-blue);
-            color: var(--cyber-blue);
-        }
-
-        .btn-cyber:hover {
-            background-color: rgba(0, 255, 255, 0.1);
-            box-shadow: 0 0 20px rgba(0, 255, 255, 0.7);
+            background: rgba(0, 206, 255, 0.1);
+            box-shadow: 0 10px 25px rgba(0, 206, 255, 0.7);
         }
 
         /* Two Columns Section */
         .columns-section {
             padding: 100px 0;
-            background-color: rgba(0, 0, 0, 0.7);
+            background: rgba(13, 2, 33, 0.8);
             position: relative;
+            border-top: 1px solid rgba(0, 206, 255, 0.2);
+            border-bottom: 1px solid rgba(255, 42, 109, 0.2);
         }
 
         .columns-section::before {
@@ -309,7 +344,17 @@
             left: 0;
             width: 100%;
             height: 2px;
-            background: linear-gradient(90deg, transparent, var(--primary), transparent);
+            background: linear-gradient(90deg, transparent, var(--primary), var(--accent), transparent);
+        }
+
+        .columns-section::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--accent), var(--primary), transparent);
         }
 
         .section-title {
@@ -320,6 +365,10 @@
             position: relative;
             font-family: 'Orbitron', sans-serif;
             text-transform: uppercase;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 0 20px rgba(0, 206, 255, 0.3);
         }
 
         .section-title::after {
@@ -327,11 +376,11 @@
             position: absolute;
             width: 200px;
             height: 3px;
-            background-color: var(--primary);
+            background: linear-gradient(90deg, var(--primary), var(--accent));
             bottom: -20px;
             left: 50%;
             transform: translateX(-50%);
-            box-shadow: 0 0 10px var(--primary);
+            box-shadow: 0 0 15px rgba(255, 42, 109, 0.5);
         }
 
         .columns-container {
@@ -344,15 +393,17 @@
             flex: 1;
             min-width: 300px;
             padding: 40px;
-            border: 1px solid var(--primary);
-            background-color: rgba(0, 0, 0, 0.8);
+            border: 1px solid rgba(0, 206, 255, 0.3);
+            background: rgba(13, 2, 33, 0.9);
             position: relative;
             transition: var(--transition);
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
         }
 
         .column:hover {
-            box-shadow: 0 0 30px rgba(255, 0, 0, 0.3);
+            box-shadow: 0 0 40px rgba(0, 206, 255, 0.3);
             transform: translateY(-10px);
+            border-color: var(--accent);
         }
 
         .column::before {
@@ -362,7 +413,7 @@
             left: 10px;
             right: 10px;
             bottom: 10px;
-            border: 1px solid rgba(255, 0, 0, 0.3);
+            border: 1px solid rgba(255, 42, 109, 0.2);
             pointer-events: none;
         }
 
@@ -370,16 +421,19 @@
             font-family: 'Orbitron', sans-serif;
             font-size: 2rem;
             margin-bottom: 30px;
-            color: var(--primary);
-            text-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
+            color: var(--accent);
+            text-shadow: 0 0 10px rgba(0, 206, 255, 0.5);
             position: relative;
             display: flex;
             align-items: center;
+            padding-bottom: 15px;
+            border-bottom: 2px solid rgba(255, 42, 109, 0.5);
         }
 
         .column-title i {
             margin-right: 15px;
             font-size: 2.5rem;
+            color: var(--primary);
         }
 
         .column-content {
@@ -388,16 +442,17 @@
 
         .column-content p {
             margin-bottom: 20px;
-            color: #cccccc;
+            color: #b0b0ff;
             line-height: 1.8;
         }
 
         .discord-widget {
-            background-color: rgba(0, 0, 0, 0.9);
+            background: rgba(0, 0, 0, 0.5);
             padding: 25px;
             border: 1px solid var(--cyber-purple);
             margin-bottom: 30px;
             position: relative;
+            box-shadow: 0 0 15px rgba(138, 43, 226, 0.3);
         }
 
         .discord-widget::before {
@@ -407,7 +462,7 @@
             left: 5px;
             right: 5px;
             bottom: 5px;
-            border: 1px solid rgba(153, 0, 255, 0.3);
+            border: 1px solid rgba(138, 43, 226, 0.2);
             pointer-events: none;
         }
 
@@ -434,11 +489,14 @@
             transition: var(--transition);
             margin-top: 10px;
             border: 1px solid #5865F2;
+            font-family: 'Orbitron', sans-serif;
+            letter-spacing: 1px;
         }
 
         .discord-link:hover {
             background-color: #4752c4;
-            box-shadow: 0 0 15px rgba(88, 101, 242, 0.7);
+            box-shadow: 0 0 20px rgba(88, 101, 242, 0.7);
+            transform: translateY(-3px);
         }
 
         /* Contact Form */
@@ -454,14 +512,14 @@
             display: block;
             margin-bottom: 8px;
             font-weight: 500;
-            color: #cccccc;
+            color: var(--accent);
         }
 
         .form-control {
             width: 100%;
             padding: 12px 15px;
-            border: 1px solid var(--gray);
-            background-color: rgba(0, 0, 0, 0.7);
+            border: 1px solid rgba(0, 206, 255, 0.3);
+            background-color: rgba(13, 2, 33, 0.9);
             color: white;
             font-family: 'Roboto Mono', monospace;
             font-size: 1rem;
@@ -471,7 +529,7 @@
         .form-control:focus {
             outline: none;
             border-color: var(--primary);
-            box-shadow: 0 0 10px rgba(255, 0, 0, 0.3);
+            box-shadow: 0 0 15px rgba(255, 42, 109, 0.3);
         }
 
         textarea.form-control {
@@ -481,10 +539,10 @@
 
         /* Footer */
         footer {
-            background-color: rgba(0, 0, 0, 0.95);
+            background-color: rgba(13, 2, 33, 0.95);
             color: white;
             padding: 60px 0 30px;
-            border-top: 1px solid var(--primary);
+            border-top: 1px solid rgba(255, 42, 109, 0.3);
             position: relative;
         }
 
@@ -495,7 +553,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(transparent 70%, rgba(255, 0, 0, 0.03) 100%);
+            background: linear-gradient(transparent 70%, rgba(255, 42, 109, 0.03) 100%);
             pointer-events: none;
         }
 
@@ -510,10 +568,27 @@
 
         .footer-logo {
             font-family: 'Orbitron', sans-serif;
-            font-size: 2rem;
+            font-size: 2.5rem;
             margin-bottom: 20px;
             color: var(--primary);
-            text-shadow: 0 0 10px var(--primary-glow);
+            text-shadow: 0 0 15px var(--primary-glow);
+            animation: aura 4s ease-in-out infinite;
+            position: relative;
+        }
+
+        .footer-logo::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 120%;
+            height: 120%;
+            background: radial-gradient(circle, rgba(255, 42, 109, 0.1) 0%, transparent 70%);
+            border-radius: 50%;
+            filter: blur(15px);
+            z-index: -1;
+            animation: aura-glow 4s ease-in-out infinite;
         }
 
         .footer-links {
@@ -523,9 +598,10 @@
         }
 
         .footer-links a {
-            color: #cccccc;
+            color: #a0a0ff;
             text-decoration: none;
             transition: var(--transition);
+            position: relative;
         }
 
         .footer-links a:hover {
@@ -543,27 +619,30 @@
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            width: 40px;
-            height: 40px;
-            background-color: rgba(255, 255, 255, 0.1);
+            width: 45px;
+            height: 45px;
+            background-color: rgba(0, 206, 255, 0.1);
             border-radius: 50%;
-            color: white;
+            color: var(--accent);
             text-decoration: none;
             transition: var(--transition);
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(0, 206, 255, 0.3);
+            font-size: 1.2rem;
         }
 
         .social-icons a:hover {
             background-color: var(--primary);
+            color: white;
             transform: translateY(-5px);
-            box-shadow: 0 0 10px var(--primary);
+            box-shadow: 0 0 15px var(--primary-glow);
+            border-color: var(--primary);
         }
 
         .copyright {
             text-align: center;
             padding-top: 30px;
             border-top: 1px solid rgba(255, 255, 255, 0.1);
-            color: #666666;
+            color: #666699;
             font-size: 0.9rem;
             position: relative;
             z-index: 1;
@@ -575,6 +654,7 @@
             margin-top: 30px;
             border: 1px solid #5865F2;
             text-align: center;
+            border-radius: 5px;
         }
 
         .discord-contact h4 {
@@ -588,7 +668,7 @@
             .hero {
                 flex-direction: column;
                 text-align: center;
-                padding-top: 140px;
+                padding-top: 150px;
             }
             
             .hero-content {
@@ -615,7 +695,7 @@
                 top: 70px;
                 left: 0;
                 width: 100%;
-                background-color: rgba(0, 0, 0, 0.95);
+                background-color: rgba(13, 2, 33, 0.98);
                 flex-direction: column;
                 align-items: center;
                 padding: 20px 0;
@@ -625,6 +705,7 @@
                 transition: var(--transition);
                 z-index: 999;
                 border-bottom: 1px solid var(--primary);
+                backdrop-filter: blur(10px);
             }
             
             .nav-links.active {
@@ -680,93 +761,131 @@
             }
         }
 
+        /* Aura Animations */
+        @keyframes aura {
+            0% {
+                text-shadow: 
+                    0 0 10px var(--primary-glow),
+                    0 0 20px var(--primary-glow),
+                    0 0 30px rgba(255, 42, 109, 0.5),
+                    0 0 40px rgba(255, 42, 109, 0.3);
+            }
+            50% {
+                text-shadow: 
+                    0 0 20px var(--primary-glow),
+                    0 0 30px var(--primary-glow),
+                    0 0 40px rgba(255, 42, 109, 0.7),
+                    0 0 50px rgba(255, 42, 109, 0.5);
+            }
+            100% {
+                text-shadow: 
+                    0 0 10px var(--primary-glow),
+                    0 0 20px var(--primary-glow),
+                    0 0 30px rgba(255, 42, 109, 0.5),
+                    0 0 40px rgba(255, 42, 109, 0.3);
+            }
+        }
+
+        @keyframes aura-glow {
+            0% {
+                opacity: 0.6;
+                transform: translate(-50%, -50%) scale(1);
+            }
+            50% {
+                opacity: 0.9;
+                transform: translate(-50%, -50%) scale(1.1);
+            }
+            100% {
+                opacity: 0.6;
+                transform: translate(-50%, -50%) scale(1);
+            }
+        }
+
         /* Cyber Effects */
         .cyber-line {
             height: 2px;
-            background: linear-gradient(90deg, transparent, var(--primary), transparent);
+            background: linear-gradient(90deg, transparent, var(--primary), var(--accent), transparent);
             margin: 40px 0;
         }
 
-        .glitch {
-            position: relative;
-        }
-
-        .glitch::before, .glitch::after {
-            content: attr(data-text);
-            position: absolute;
+        /* Tokyo Night Rain Effect */
+        .rain-container {
+            position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
+            pointer-events: none;
+            z-index: -1;
+            overflow: hidden;
         }
 
-        .glitch::before {
-            left: 2px;
-            text-shadow: -2px 0 var(--cyber-blue);
-            animation: glitch-1 2s infinite linear alternate-reverse;
+        .rain {
+            position: absolute;
+            width: 2px;
+            height: 100px;
+            background: linear-gradient(to bottom, transparent, var(--accent));
+            animation: rain-fall linear infinite;
         }
 
-        .glitch::after {
-            left: -2px;
-            text-shadow: 2px 0 var(--primary);
-            animation: glitch-2 3s infinite linear alternate-reverse;
+        @keyframes rain-fall {
+            to {
+                transform: translateY(100vh);
+            }
         }
 
-        @keyframes glitch-1 {
-            0% { clip: rect(20px, 9999px, 25px, 0); }
-            5% { clip: rect(15px, 9999px, 30px, 0); }
-            10% { clip: rect(40px, 9999px, 45px, 0); }
-            15% { clip: rect(35px, 9999px, 50px, 0); }
-            20% { clip: rect(60px, 9999px, 65px, 0); }
-            25% { clip: rect(55px, 9999px, 70px, 0); }
-            30% { clip: rect(80px, 9999px, 85px, 0); }
-            35% { clip: rect(75px, 9999px, 90px, 0); }
-            40% { clip: rect(100px, 9999px, 105px, 0); }
-            45% { clip: rect(95px, 9999px, 110px, 0); }
-            50% { clip: rect(120px, 9999px, 125px, 0); }
-            55% { clip: rect(115px, 9999px, 130px, 0); }
-            60% { clip: rect(140px, 9999px, 145px, 0); }
-            65% { clip: rect(135px, 9999px, 150px, 0); }
-            70% { clip: rect(160px, 9999px, 165px, 0); }
-            75% { clip: rect(155px, 9999px, 170px, 0); }
-            80% { clip: rect(180px, 9999px, 185px, 0); }
-            85% { clip: rect(175px, 9999px, 190px, 0); }
-            90% { clip: rect(200px, 9999px, 205px, 0); }
-            95% { clip: rect(195px, 9999px, 210px, 0); }
-            100% { clip: rect(220px, 9999px, 225px, 0); }
+        /* Floating particles */
+        .particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
         }
 
-        @keyframes glitch-2 {
-            0% { clip: rect(30px, 9999px, 35px, 0); }
-            5% { clip: rect(25px, 9999px, 40px, 0); }
-            10% { clip: rect(50px, 9999px, 55px, 0); }
-            15% { clip: rect(45px, 9999px, 60px, 0); }
-            20% { clip: rect(70px, 9999px, 75px, 0); }
-            25% { clip: rect(65px, 9999px, 80px, 0); }
-            30% { clip: rect(90px, 9999px, 95px, 0); }
-            35% { clip: rect(85px, 9999px, 100px, 0); }
-            40% { clip: rect(110px, 9999px, 115px, 0); }
-            45% { clip: rect(105px, 9999px, 120px, 0); }
-            50% { clip: rect(130px, 9999px, 135px, 0); }
-            55% { clip: rect(125px, 9999px, 140px, 0); }
-            60% { clip: rect(150px, 9999px, 155px, 0); }
-            65% { clip: rect(145px, 9999px, 160px, 0); }
-            70% { clip: rect(170px, 9999px, 175px, 0); }
-            75% { clip: rect(165px, 9999px, 180px, 0); }
-            80% { clip: rect(190px, 9999px, 195px, 0); }
-            85% { clip: rect(185px, 9999px, 200px, 0); }
-            90% { clip: rect(210px, 9999px, 215px, 0); }
-            95% { clip: rect(205px, 9999px, 220px, 0); }
-            100% { clip: rect(230px, 9999px, 235px, 0); }
+        .particle {
+            position: absolute;
+            width: 3px;
+            height: 3px;
+            background-color: var(--accent);
+            border-radius: 50%;
+            animation: float 20s infinite linear;
+            opacity: 0.5;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0) translateX(0);
+            }
+            25% {
+                transform: translateY(-100px) translateX(100px);
+            }
+            50% {
+                transform: translateY(-200px) translateX(0);
+            }
+            75% {
+                transform: translateY(-100px) translateX(-100px);
+            }
+            100% {
+                transform: translateY(0) translateX(0);
+            }
         }
     </style>
 </head>
 <body>
+    <!-- Tokyo Night Rain Effect -->
+    <div class="rain-container" id="rainContainer"></div>
+    
+    <!-- Floating Particles -->
+    <div class="particles" id="particles"></div>
+    
     <!-- Header & Navigation -->
     <header>
         <div class="container">
             <nav class="navbar">
-                <a href="#" class="logo glitch" data-text="ZHEDDER">ZHEDDER</a>
+                <a href="#" class="logo">ZHEDDER</a>
                 <button class="mobile-menu-btn" id="mobileMenuBtn">
                     <i class="fas fa-bars"></i>
                 </button>
@@ -785,7 +904,7 @@
         <div class="container">
             <div class="hero-content">
                 <h1>Welcome to <span>ZHEDDER</span></h1>
-                <p class="tagline">Cyber Development & Security Services</p>
+                <p class="tagline">Tokyo Night Cyber Services</p>
                 <p>Specializing in advanced cybersecurity solutions, penetration testing, and custom development for high-risk environments. We operate at the intersection of technology and security, providing elite services for clients who demand excellence.</p>
                 <div>
                     <a href="#learn" class="btn">Join Discord to Learn</a>
@@ -793,8 +912,8 @@
                 </div>
             </div>
             <div class="hero-image">
-                <div class="project-img" style="background: linear-gradient(135deg, #000000 0%, #990000 100%); border: 1px solid var(--primary);">
-                    <i class="fas fa-user-secret" style="font-size: 8rem; color: var(--primary); text-shadow: 0 0 20px var(--primary-glow);"></i>
+                <div style="background: linear-gradient(135deg, #0d0221 0%, #1a1a2e 100%); border: 2px solid var(--accent); padding: 30px; box-shadow: 0 0 40px rgba(0, 206, 255, 0.3);">
+                    <i class="fas fa-user-secret" style="font-size: 8rem; color: var(--primary); text-shadow: 0 0 30px var(--primary-glow);"></i>
                 </div>
             </div>
         </div>
@@ -836,10 +955,10 @@
                         </ul>
                         
                         <div class="discord-widget">
-                            <h4><i class="fab fa-discord"></i> Discord Server</h4>
+                            <h4><i class="fab fa-discord"></i> Discord Learning Community</h4>
                             <p>Connect with our community of security researchers and developers. Share knowledge, collaborate on projects, and stay updated with the latest security trends.</p>
-                            <a href="https://discord.gg/example" target="_blank" class="discord-link">
-                                <i class="fab fa-discord"></i> Join ZHEDDER Discord
+                            <a href="https://discord.gg/dbgJHsC8" target="_blank" class="discord-link">
+                                <i class="fab fa-discord"></i> Join ZHEDDER Discord Group
                             </a>
                         </div>
                         
@@ -880,8 +999,16 @@
                             </li>
                         </ul>
                         
+                        <div class="discord-widget" style="margin-top: 20px; background: rgba(255, 42, 109, 0.05); border-color: var(--primary);">
+                            <h4><i class="fas fa-lock"></i> Private Discord for Rentals</h4>
+                            <p>Access our exclusive private Discord server for clients who rent our services. Get direct support, priority updates, and collaborate with our team.</p>
+                            <a href="https://discord.gg/S3FmVVyj" target="_blank" class="discord-link" style="background: linear-gradient(90deg, var(--primary), #ff0080); border-color: var(--primary);">
+                                <i class="fab fa-discord"></i> Join Private Discord (Rent)
+                            </a>
+                        </div>
+                        
                         <div class="contact-form">
-                            <h4 style="color: var(--primary); margin-bottom: 20px; font-family: 'Orbitron', sans-serif;">
+                            <h4 style="color: var(--accent); margin-bottom: 20px; font-family: 'Orbitron', sans-serif;">
                                 <i class="fas fa-envelope"></i> Contact for Rental
                             </h4>
                             <form id="rentForm">
@@ -908,7 +1035,7 @@
                                     <label for="message">Project Details</label>
                                     <textarea id="message" class="form-control" required placeholder="Describe your project, timeline, and requirements..."></textarea>
                                 </div>
-                                <button type="submit" class="btn" style="width: 100%;">
+                                <button type="submit" class="btn" style="width: 100%; background: linear-gradient(90deg, var(--primary), var(--accent));">
                                     <i class="fas fa-paper-plane"></i> Send Rental Request
                                 </button>
                             </form>
@@ -925,8 +1052,8 @@
             <div class="footer-content">
                 <div>
                     <div class="footer-logo">ZHEDDER</div>
-                    <p>Cyber Development & Security Services</p>
-                    <p style="margin-top: 10px; font-size: 0.9rem; color: #666666;">
+                    <p>Tokyo Night Cyber Services</p>
+                    <p style="margin-top: 10px; font-size: 0.9rem; color: #666699;">
                         <i class="fas fa-map-marker-alt"></i> Operating Globally
                     </p>
                     <div class="social-icons">
@@ -938,13 +1065,13 @@
                 </div>
                 <div class="footer-links">
                     <div>
-                        <h4 style="margin-bottom: 15px; color: white;">Services</h4>
+                        <h4 style="margin-bottom: 15px; color: var(--accent);">Services</h4>
                         <a href="#learn">Learn on Discord</a><br>
                         <a href="#rent">Rent Services</a><br>
                         <a href="#contact">Contact</a>
                     </div>
                     <div>
-                        <h4 style="margin-bottom: 15px; color: white;">Legal</h4>
+                        <h4 style="margin-bottom: 15px; color: var(--accent);">Legal</h4>
                         <a href="#">Ethics Policy</a><br>
                         <a href="#">Terms of Service</a><br>
                         <a href="#">Privacy</a>
@@ -955,14 +1082,14 @@
             <div class="discord-contact">
                 <h4><i class="fab fa-discord"></i> Discord Contact</h4>
                 <p>For immediate assistance, contact us on Discord:</p>
-                <p style="font-family: 'Roboto Mono', monospace; background-color: rgba(0,0,0,0.5); padding: 10px; margin: 10px 0;">
+                <p style="font-family: 'Roboto Mono', monospace; background-color: rgba(0,0,0,0.5); padding: 10px; margin: 10px 0; border-left: 3px solid var(--primary);">
                     Zhedder#0001
                 </p>
                 <p style="font-size: 0.9rem; color: #999;">Response time: Usually within 24 hours</p>
             </div>
             
             <div class="copyright">
-                &copy; <span id="currentYear"></span> ZHEDDER. All rights reserved. | Cybersecurity & Development Services
+                &copy; <span id="currentYear"></span> ZHEDDER. All rights reserved. | Tokyo Night Cyber Services
             </div>
         </div>
     </footer>
@@ -1024,16 +1151,55 @@
             });
         });
         
+        // Create rain effect
+        const rainContainer = document.getElementById('rainContainer');
+        for (let i = 0; i < 100; i++) {
+            const rain = document.createElement('div');
+            rain.classList.add('rain');
+            rain.style.left = `${Math.random() * 100}%`;
+            rain.style.animationDuration = `${Math.random() * 0.5 + 0.5}s`;
+            rain.style.animationDelay = `${Math.random() * 2}s`;
+            rain.style.opacity = `${Math.random() * 0.3 + 0.1}`;
+            rainContainer.appendChild(rain);
+        }
+        
+        // Create particles
+        const particlesContainer = document.getElementById('particles');
+        for (let i = 0; i < 50; i++) {
+            const particle = document.createElement('div');
+            particle.classList.add('particle');
+            particle.style.left = `${Math.random() * 100}%`;
+            particle.style.top = `${Math.random() * 100}%`;
+            particle.style.animationDuration = `${Math.random() * 20 + 10}s`;
+            particle.style.animationDelay = `${Math.random() * 5}s`;
+            particle.style.opacity = `${Math.random() * 0.5 + 0.2}`;
+            particle.style.width = `${Math.random() * 4 + 1}px`;
+            particle.style.height = particle.style.width;
+            particlesContainer.appendChild(particle);
+        }
+        
         // Cyber effect for buttons on hover
         document.querySelectorAll('.btn').forEach(btn => {
             btn.addEventListener('mouseenter', function() {
-                this.style.boxShadow = '0 0 25px rgba(255, 0, 0, 0.8)';
+                this.style.transform = 'translateY(-5px)';
+                this.style.boxShadow = '0 10px 25px rgba(255, 42, 109, 0.7)';
             });
             
             btn.addEventListener('mouseleave', function() {
+                this.style.transform = '';
                 this.style.boxShadow = '';
             });
         });
+        
+        // Add aura effect to ZHEDDER text in hero
+        const heroTitle = document.querySelector('.hero h1 span');
+        setInterval(() => {
+            const intensity = Math.random() * 0.5 + 0.5;
+            heroTitle.style.textShadow = 
+                `0 0 ${10 * intensity}px rgba(255, 42, 109, ${0.5 * intensity}),
+                 0 0 ${20 * intensity}px rgba(255, 42, 109, ${0.3 * intensity}),
+                 0 0 ${30 * intensity}px rgba(255, 42, 109, ${0.2 * intensity})`;
+        }, 100);
     </script>
 </body>
 </html>
