@@ -7,6 +7,13 @@
     <meta name="description" content="Zhedder - Cyber development, learning, and rental services with Tokyo Night aesthetic.">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Roboto+Mono:wght@300;400;500;700&family=Oxanium:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <!-- EmailJS SDK -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function() {
+            emailjs.init("F8K2WWjCrIc9TtZW");
+        })();
+    </script>
     <style>
         :root {
             --primary: #ff2a6d;
@@ -128,8 +135,39 @@
             text-shadow: 0 0 10px rgba(0, 206, 255, 0.7);
         }
 
-        .logo span {
+        /* NEW: Quick Action Buttons */
+        .quick-actions {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .quick-action-btn {
+            padding: 8px 20px;
+            background: transparent;
             color: var(--accent);
+            border: 1px solid var(--accent);
+            text-decoration: none;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 0.9rem;
+            transition: var(--transition);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .quick-action-btn:hover {
+            background: rgba(0, 206, 255, 0.1);
+            box-shadow: 0 0 10px rgba(0, 206, 255, 0.5);
+        }
+
+        .quick-action-btn.primary {
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+            color: white;
+            border: none;
+        }
+
+        .quick-action-btn.primary:hover {
+            box-shadow: 0 0 15px rgba(255, 42, 109, 0.7);
         }
 
         .nav-links {
@@ -170,6 +208,7 @@
             width: 100%;
         }
 
+        /* UPDATED: Mobile menu */
         .mobile-menu-btn {
             display: none;
             background: none;
@@ -178,6 +217,64 @@
             color: var(--primary);
             cursor: pointer;
             text-shadow: 0 0 10px var(--primary-glow);
+            position: relative;
+            z-index: 1002;
+        }
+
+        .mobile-menu {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 300px;
+            height: 100%;
+            background: rgba(13, 2, 33, 0.98);
+            backdrop-filter: blur(10px);
+            z-index: 1001;
+            transition: right 0.4s ease;
+            padding: 80px 30px 30px;
+            border-left: 1px solid var(--primary);
+            box-shadow: -10px 0 30px rgba(0, 0, 0, 0.7);
+        }
+
+        .mobile-menu.active {
+            right: 0;
+        }
+
+        .mobile-menu .quick-actions {
+            flex-direction: column;
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .mobile-menu .quick-action-btn {
+            width: 100%;
+            text-align: center;
+            padding: 12px;
+        }
+
+        .mobile-menu-links {
+            list-style: none;
+            margin-top: 30px;
+        }
+
+        .mobile-menu-links li {
+            margin-bottom: 20px;
+        }
+
+        .mobile-menu-links a {
+            color: white;
+            text-decoration: none;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.2rem;
+            display: block;
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            transition: var(--transition);
+        }
+
+        .mobile-menu-links a:hover {
+            color: var(--primary);
+            padding-left: 10px;
         }
 
         /* Hero Section */
@@ -683,36 +780,21 @@
             .columns-container {
                 flex-direction: column;
             }
-        }
-
-        @media (max-width: 768px) {
+            
+            .quick-actions {
+                display: none;
+            }
+            
             .mobile-menu-btn {
                 display: block;
             }
             
             .nav-links {
-                position: fixed;
-                top: 70px;
-                left: 0;
-                width: 100%;
-                background-color: rgba(13, 2, 33, 0.98);
-                flex-direction: column;
-                align-items: center;
-                padding: 20px 0;
-                box-shadow: 0 10px 15px rgba(0, 0, 0, 0.5);
-                transform: translateY(-100%);
-                opacity: 0;
-                transition: var(--transition);
-                z-index: 999;
-                border-bottom: 1px solid var(--primary);
-                backdrop-filter: blur(10px);
+                display: none;
             }
-            
-            .nav-links.active {
-                transform: translateY(0);
-                opacity: 1;
-            }
-            
+        }
+
+        @media (max-width: 768px) {
             .hero h1 {
                 font-size: 2.5rem;
             }
@@ -758,6 +840,10 @@
             
             .column {
                 padding: 25px;
+            }
+            
+            .mobile-menu {
+                width: 100%;
             }
         }
 
@@ -872,6 +958,34 @@
                 transform: translateY(0) translateX(0);
             }
         }
+        
+        /* Notification for form submission */
+        .notification {
+            position: fixed;
+            top: 100px;
+            right: 20px;
+            background: rgba(13, 2, 33, 0.95);
+            border: 1px solid var(--success);
+            color: var(--success);
+            padding: 15px 25px;
+            border-radius: 5px;
+            box-shadow: 0 0 15px rgba(5, 217, 232, 0.5);
+            z-index: 10000;
+            transform: translateX(150%);
+            transition: transform 0.4s ease;
+            font-family: 'Orbitron', sans-serif;
+            max-width: 300px;
+        }
+        
+        .notification.show {
+            transform: translateX(0);
+        }
+        
+        .notification.error {
+            border-color: var(--primary);
+            color: var(--primary);
+            box-shadow: 0 0 15px rgba(255, 42, 109, 0.5);
+        }
     </style>
 </head>
 <body>
@@ -881,14 +995,39 @@
     <!-- Floating Particles -->
     <div class="particles" id="particles"></div>
     
+    <!-- Notification System -->
+    <div class="notification" id="notification"></div>
+    
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <ul class="mobile-menu-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#learn">Learn</a></li>
+            <li><a href="#rent">Rent</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <div class="quick-actions">
+            <a href="#rentFormSection" class="quick-action-btn primary">Sewa</a>
+            <a href="#discordWidget" class="quick-action-btn">Masuk Grup DC</a>
+        </div>
+    </div>
+    
     <!-- Header & Navigation -->
     <header>
         <div class="container">
             <nav class="navbar">
                 <a href="#" class="logo">ZHEDDER</a>
+                
+                <!-- Quick Action Buttons (Desktop) -->
+                <div class="quick-actions">
+                    <a href="#rentFormSection" class="quick-action-btn primary">Sewa</a>
+                    <a href="#discordWidget" class="quick-action-btn">Masuk Grup DC</a>
+                </div>
+                
                 <button class="mobile-menu-btn" id="mobileMenuBtn">
                     <i class="fas fa-bars"></i>
                 </button>
+                
                 <ul class="nav-links" id="navLinks">
                     <li><a href="#home">Home</a></li>
                     <li><a href="#learn">Learn</a></li>
@@ -907,8 +1046,8 @@
                 <p class="tagline">Rent DDoS and WA spam services</p>
                 <p>Specializing in advanced cybersecurity solutions, penetration testing, and custom development for high-risk environments. We operate at the intersection of technology and security, providing elite services for clients who demand excellence.</p>
                 <div>
-                    <a href="#learn" class="btn">Join Discord to Learn</a>
-                    <a href="#rent" class="btn btn-outline">Rent DDoS/spam Services</a>
+                    <a href="#discordWidget" class="btn">Join Discord to Learn</a>
+                    <a href="#rentFormSection" class="btn btn-outline">Rent DDoS/spam Services</a>
                 </div>
             </div>
             <div class="hero-image">
@@ -954,7 +1093,7 @@
                             </li>
                         </ul>
                         
-                        <div class="discord-widget">
+                        <div class="discord-widget" id="discordWidget">
                             <h4><i class="fab fa-discord"></i> Discord Learning Community</h4>
                             <p>Connect with our community of security researchers and developers. Share knowledge, collaborate on projects, and stay updated with the latest security trends.</p>
                             <a href="https://discord.gg/dbgJHsC8" target="_blank" class="discord-link">
@@ -1007,27 +1146,27 @@
                             </a>
                         </div>
                         
-                        <div class="contact-form">
+                        <div class="contact-form" id="rentFormSection">
                             <h4 style="color: var(--accent); margin-bottom: 20px; font-family: 'Orbitron', sans-serif;">
                                 <i class="fas fa-envelope"></i> Contact for Rental
                             </h4>
                             <form id="rentForm">
                                 <div class="form-group">
-                                    <label for="name">Name / Organization</label>
-                                    <input type="text" id="name" class="form-control" required>
+                                    <label for="name">Your Name</label>
+                                    <input type="text" id="name" class="form-control" required placeholder="Enter your name">
                                 </div>
                                 <div class="form-group">
-                                    <label for="email">Contact Email</label>
-                                    <input type="email" id="email" class="form-control" required>
+                                    <label for="email">Your Email</label>
+                                    <input type="email" id="email" class="form-control" required placeholder="Enter your email address">
                                 </div>
                                 <div class="form-group">
                                     <label for="service">Service Needed</label>
                                     <select id="service" class="form-control" required>
                                         <option value="">Select service</option>
-                                        <option value="pentest">Rent DDoS services</option>
-                                        <option value="development">Rent WA spam services</option>
-                                        <option value="audit">hire services to be a student</option>
-                                        <option value="consultation">Hiring services to be a teacher</option>
+                                        <option value="ddos">Rent DDoS services</option>
+                                        <option value="spam">Rent WA spam services</option>
+                                        <option value="student">Hire services to be a student</option>
+                                        <option value="teacher">Hiring services to be a teacher</option>
                                         <option value="other">Other</option>
                                     </select>
                                 </div>
@@ -1057,16 +1196,16 @@
                         <i class="fas fa-map-marker-alt"></i> Operating globally
                     </p>
                     <div class="social-icons">
-                        <a href="https://github.com/rifqi409/"><i class="fab fa-github"></i></a>
-                        <a href="https://discord.gg/dbgJHsC8"><i class="fab fa-discord"></i></a>
-                        <a href="frontman178@gmail.com"><i class="fas fa-envelope"></i></a>
+                        <a href="https://github.com/rifqi409/" target="_blank"><i class="fab fa-github"></i></a>
+                        <a href="https://discord.gg/dbgJHsC8" target="_blank"><i class="fab fa-discord"></i></a>
+                        <a href="javascript:void(0);" onclick="showEmailNotification()"><i class="fas fa-envelope"></i></a>
                     </div>
                 </div>
                 <div class="footer-links">
                     <div>
                         <h4 style="margin-bottom: 15px; color: var(--accent);">Services</h4>
-                        <a href="#learn">Learn on Discord</a><br>
-                        <a href="#rent">Rent Services</a><br>
+                        <a href="#discordWidget">Learn on Discord</a><br>
+                        <a href="#rentFormSection">Rent Services</a><br>
                         <a href="#contact">Contact</a>
                     </div>
                     <div>
@@ -1096,19 +1235,19 @@
     <script>
         // Mobile menu toggle
         const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-        const navLinks = document.getElementById('navLinks');
+        const mobileMenu = document.getElementById('mobileMenu');
         
         mobileMenuBtn.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-            mobileMenuBtn.innerHTML = navLinks.classList.contains('active') 
+            mobileMenu.classList.toggle('active');
+            mobileMenuBtn.innerHTML = mobileMenu.classList.contains('active') 
                 ? '<i class="fas fa-times"></i>' 
                 : '<i class="fas fa-bars"></i>';
         });
         
         // Close mobile menu when clicking a link
-        document.querySelectorAll('.nav-links a').forEach(link => {
+        document.querySelectorAll('.mobile-menu a').forEach(link => {
             link.addEventListener('click', () => {
-                navLinks.classList.remove('active');
+                mobileMenu.classList.remove('active');
                 mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
             });
         });
@@ -1116,20 +1255,91 @@
         // Set current year in footer
         document.getElementById('currentYear').textContent = new Date().getFullYear();
         
-        // Form submission
-        document.getElementById('rentForm').addEventListener('submit', function(e) {
+        // Notification system
+        function showNotification(message, isError = false) {
+            const notification = document.getElementById('notification');
+            notification.textContent = message;
+            notification.className = 'notification';
+            
+            if (isError) {
+                notification.classList.add('error');
+            }
+            
+            notification.classList.add('show');
+            
+            setTimeout(() => {
+                notification.classList.remove('show');
+            }, 5000);
+        }
+        
+        // Form submission to email using EmailJS
+        document.getElementById('rentForm').addEventListener('submit', async function(e) {
             e.preventDefault();
             
             // Get form values
             const name = document.getElementById('name').value;
             const email = document.getElementById('email').value;
             const service = document.getElementById('service').value;
+            const message = document.getElementById('message').value;
             
-            // Show success message
-            alert(`Thank you ${name}! Your rental request for ${service} has been received. We will contact you at ${email} within 24 hours.`);
+            // Service mapping for display
+            const serviceMap = {
+                'ddos': 'Rent DDoS services',
+                'spam': 'Rent WA spam services',
+                'student': 'Hire services to be a student',
+                'teacher': 'Hiring services to be a teacher',
+                'other': 'Other'
+            };
             
-            // Reset form
-            this.reset();
+            const serviceText = serviceMap[service] || service;
+            
+            try {
+                // Show loading state
+                const submitBtn = this.querySelector('button[type="submit"]');
+                const originalText = submitBtn.innerHTML;
+                submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+                submitBtn.disabled = true;
+                
+                // Send email using EmailJS
+                const templateParams = {
+                    to_email: 'frontman178@gmail.com',
+                    from_name: name,
+                    from_email: email,
+                    service_type: serviceText,
+                    message: message,
+                    date: new Date().toLocaleString()
+                };
+                
+                // Send email using your EmailJS credentials
+                const response = await emailjs.send(
+                    'service_ldje57s', // Service ID
+                    'template_q5em8pf', // Template ID
+                    templateParams
+                );
+                
+                if (response.status === 200) {
+                    // Show success notification
+                    showNotification(`Thank you ${name}! Your rental request for ${serviceText} has been received. We will contact you at ${email} within 24 hours.`);
+                    
+                    // Reset form
+                    this.reset();
+                } else {
+                    throw new Error('Failed to send email');
+                }
+                
+                // Restore button
+                submitBtn.innerHTML = originalText;
+                submitBtn.disabled = false;
+                
+            } catch (error) {
+                console.error('Error sending email:', error);
+                showNotification('Sorry, there was an error sending your request. Please try again or contact us directly on Discord.', true);
+                
+                // Restore button
+                const submitBtn = this.querySelector('button[type="submit"]');
+                submitBtn.innerHTML = '<i class="fas fa-paper-plane"></i> Send Rental Request';
+                submitBtn.disabled = false;
+            }
         });
         
         // Smooth scrolling for anchor links
@@ -1192,13 +1402,34 @@
         
         // Add aura effect to ZHEDDER text in hero
         const heroTitle = document.querySelector('.hero h1 span');
-        setInterval(() => {
-            const intensity = Math.random() * 0.5 + 0.5;
-            heroTitle.style.textShadow = 
-                `0 0 ${10 * intensity}px rgba(255, 42, 109, ${0.5 * intensity}),
-                 0 0 ${20 * intensity}px rgba(255, 42, 109, ${0.3 * intensity}),
-                 0 0 ${30 * intensity}px rgba(255, 42, 109, ${0.2 * intensity})`;
-        }, 100);
+        if (heroTitle) {
+            setInterval(() => {
+                const intensity = Math.random() * 0.5 + 0.5;
+                heroTitle.style.textShadow = 
+                    `0 0 ${10 * intensity}px rgba(255, 42, 109, ${0.5 * intensity}),
+                     0 0 ${20 * intensity}px rgba(255, 42, 109, ${0.3 * intensity}),
+                     0 0 ${30 * intensity}px rgba(255, 42, 109, ${0.2 * intensity})`;
+            }, 100);
+        }
+        
+        // Email notification
+        function showEmailNotification() {
+            showNotification('Email: frontman178@gmail.com (Use the contact form above to send messages)', false);
+        }
+        
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!mobileMenu.contains(e.target) && !mobileMenuBtn.contains(e.target) && mobileMenu.classList.contains('active')) {
+                mobileMenu.classList.remove('active');
+                mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+            }
+        });
+        
+        // Initialize EmailJS on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            // EmailJS is already initialized in the head section
+            console.log('EmailJS initialized and ready to send emails to frontman178@gmail.com');
+        });
     </script>
 </body>
 </html>
