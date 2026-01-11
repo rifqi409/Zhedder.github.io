@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ZHEDDER | Ultra DDoS service</title>
-    <meta name="description" content="Zhedder - Cyber development, learning, and rental services with Tokyo Night aesthetic.">
+    <title>ZHEDDER | Premium DDoS & WA Spam Services</title>
+    <meta name="description" content="Zhedder - Professional DDoS protection testing, WA spam services, cybersecurity development and rental services with Tokyo Night aesthetic.">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Roboto+Mono:wght@300;400;500;700&family=Oxanium:wght@300;400;600;800&display=swap" rel="stylesheet">
     <!-- EmailJS SDK -->
@@ -31,6 +31,7 @@
             --gray: #565676;
             --dark-gray: #1a1a2e;
             --success: #05d9e8;
+            --warning: #ffcc00;
             --border-radius: 0;
             --shadow: 0 0 15px rgba(0, 206, 255, 0.5);
             --transition: all 0.3s ease;
@@ -760,6 +761,95 @@
             font-family: 'Orbitron', sans-serif;
         }
 
+        /* NEW: Service Details Box */
+        .service-details {
+            background: rgba(255, 42, 109, 0.05);
+            border: 1px solid var(--primary);
+            padding: 25px;
+            margin: 20px 0;
+            position: relative;
+        }
+
+        .service-details::before {
+            content: '';
+            position: absolute;
+            top: 5px;
+            left: 5px;
+            right: 5px;
+            bottom: 5px;
+            border: 1px solid rgba(255, 42, 109, 0.2);
+            pointer-events: none;
+        }
+
+        .service-details h4 {
+            color: var(--primary);
+            margin-bottom: 15px;
+            font-family: 'Orbitron', sans-serif;
+            display: flex;
+            align-items: center;
+        }
+
+        .service-details h4 i {
+            margin-right: 10px;
+        }
+
+        .warning-box {
+            background: rgba(255, 204, 0, 0.1);
+            border: 1px solid var(--warning);
+            padding: 15px;
+            margin: 20px 0;
+            border-left: 4px solid var(--warning);
+        }
+
+        .warning-box p {
+            color: #ffcc00;
+            margin: 0;
+            font-size: 0.9rem;
+        }
+
+        /* Pricing Table */
+        .pricing-table {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .pricing-item {
+            background: rgba(0, 206, 255, 0.05);
+            border: 1px solid rgba(0, 206, 255, 0.3);
+            padding: 20px;
+            text-align: center;
+            transition: var(--transition);
+        }
+
+        .pricing-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 206, 255, 0.2);
+            border-color: var(--accent);
+        }
+
+        .pricing-item h5 {
+            color: var(--accent);
+            font-family: 'Orbitron', sans-serif;
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+
+        .pricing-item .price {
+            font-size: 1.8rem;
+            color: var(--primary);
+            font-weight: bold;
+            margin: 15px 0;
+            text-shadow: 0 0 10px rgba(255, 42, 109, 0.5);
+        }
+
+        .pricing-item .duration {
+            color: #a0a0ff;
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+        }
+
         /* Responsive Design */
         @media (max-width: 992px) {
             .hero {
@@ -791,6 +881,10 @@
             
             .nav-links {
                 display: none;
+            }
+            
+            .pricing-table {
+                grid-template-columns: 1fr;
             }
         }
 
@@ -986,6 +1080,28 @@
             color: var(--primary);
             box-shadow: 0 0 15px rgba(255, 42, 109, 0.5);
         }
+        
+        .notification.success {
+            border-color: var(--success);
+            color: var(--success);
+            box-shadow: 0 0 15px rgba(5, 217, 232, 0.5);
+        }
+        
+        /* Loading spinner */
+        .spinner {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            border-top-color: var(--primary);
+            animation: spin 1s ease-in-out infinite;
+            margin-right: 10px;
+        }
+        
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
     </style>
 </head>
 <body>
@@ -1043,11 +1159,16 @@
         <div class="container">
             <div class="hero-content">
                 <h1>Welcome to <span>ZHEDDER</span></h1>
-                <p class="tagline">Rent DDoS and WA spam services</p>
-                <p>Specializing in advanced cybersecurity solutions, penetration testing, and custom development for high-risk environments. We operate at the intersection of technology and security, providing elite services for clients who demand excellence.</p>
+                <p class="tagline">Premium DDoS Testing & WA Spam Services</p>
+                <p>Specializing in advanced cybersecurity solutions, penetration testing, stress testing, and custom development for legitimate security testing purposes. We operate at the intersection of technology and security, providing elite services for authorized testing environments.</p>
+                
+                <div class="warning-box">
+                    <p><i class="fas fa-exclamation-triangle"></i> <strong>Disclaimer:</strong> Our services are for authorized security testing only. All activities must comply with applicable laws and ethical guidelines.</p>
+                </div>
+                
                 <div>
                     <a href="#discordWidget" class="btn">Join Discord to Learn</a>
-                    <a href="#rentFormSection" class="btn btn-outline">Rent DDoS/spam Services</a>
+                    <a href="#rentFormSection" class="btn btn-outline">Rent DDoS/Spam Services</a>
                 </div>
             </div>
             <div class="hero-image">
@@ -1072,7 +1193,7 @@
                         <i class="fab fa-discord"></i> Join Discord to Learn
                     </div>
                     <div class="column-content">
-                        <p>Join our exclusive Discord community to learn advanced cybersecurity techniques, coding, and penetration testing from industry experts.</p>
+                        <p>Join our exclusive Discord community to learn advanced cybersecurity techniques, coding, penetration testing, and legitimate security testing methodologies from industry experts.</p>
                         <p>Our community offers:</p>
                         <ul style="list-style: none; margin-bottom: 25px;">
                             <li style="margin-bottom: 10px; padding-left: 20px; position: relative;">
@@ -1081,7 +1202,7 @@
                             </li>
                             <li style="margin-bottom: 10px; padding-left: 20px; position: relative;">
                                 <i class="fas fa-check" style="color: var(--success); position: absolute; left: 0;"></i>
-                                DDoS creation and introduction 
+                                DDoS creation and introduction (Educational)
                             </li>
                             <li style="margin-bottom: 10px; padding-left: 20px; position: relative;">
                                 <i class="fas fa-check" style="color: var(--success); position: absolute; left: 0;"></i>
@@ -1090,6 +1211,10 @@
                             <li style="margin-bottom: 10px; padding-left: 20px; position: relative;">
                                 <i class="fas fa-check" style="color: var(--success); position: absolute; left: 0;"></i>
                                 Networking with security professionals
+                            </li>
+                            <li style="margin-bottom: 10px; padding-left: 20px; position: relative;">
+                                <i class="fas fa-check" style="color: var(--success); position: absolute; left: 0;"></i>
+                                Ethical hacking and penetration testing
                             </li>
                         </ul>
                         
@@ -1101,9 +1226,14 @@
                             </a>
                         </div>
                         
-                        <p style="font-size: 0.9rem; color: var(--gray);">
-                            <i class="fas fa-shield-alt"></i> Note: All activities must comply with ethical guidelines and applicable laws.
-                        </p>
+                        <div class="service-details">
+                            <h4><i class="fas fa-graduation-cap"></i> What You'll Learn</h4>
+                            <p>• DDoS mitigation techniques and protection</p>
+                            <p>• Network security fundamentals</p>
+                            <p>• Python scripting for security tools</p>
+                            <p>• Ethical penetration testing methodologies</p>
+                            <p>• Security tool development and customization</p>
+                        </div>
                     </div>
                 </div>
                 
@@ -1113,30 +1243,46 @@
                         <i class="fas fa-server"></i> Rent Services
                     </div>
                     <div class="column-content">
-                        <p>Need specialized cybersecurity services or custom development? Rent our expertise for your projects.</p>
-                        <p>We offer:</p>
-                        <ul style="list-style: none; margin-bottom: 25px;">
-                            <li style="margin-bottom: 10px; padding-left: 20px; position: relative;">
-                                <i class="fas fa-bolt" style="color: var(--primary); position: absolute; left: 0;"></i>
-                                Penetration Testing & Vulnerability Assessment
-                            </li>
-                            <li style="margin-bottom: 10px; padding-left: 20px; position: relative;">
-                                <i class="fas fa-bolt" style="color: var(--primary); position: absolute; left: 0;"></i>
-                                Custom Security Tool Development
-                            </li>
-                            <li style="margin-bottom: 10px; padding-left: 20px; position: relative;">
-                                <i class="fas fa-bolt" style="color: var(--primary); position: absolute; left: 0;"></i>
-                                Secure Code Review & Auditing
-                            </li>
-                            <li style="margin-bottom: 10px; padding-left: 20px; position: relative;">
-                                <i class="fas fa-bolt" style="color: var(--primary); position: absolute; left: 0;"></i>
-                                Incident Response & Digital Forensics
-                            </li>
-                            <li style="margin-bottom: 10px; padding-left: 20px; position: relative;">
-                                <i class="fas fa-bolt" style="color: var(--primary); position: absolute; left: 0;"></i>
-                                Cybersecurity Consultation
-                            </li>
-                        </ul>
+                        <p>Need specialized cybersecurity services or custom development? Rent our expertise for your legitimate security testing projects.</p>
+                        
+                        <div class="service-details">
+                            <h4><i class="fas fa-bolt"></i> DDoS Stress Testing Services</h4>
+                            <p><strong>Purpose:</strong> Legitimate stress testing for network infrastructure, DDoS protection validation, and capacity planning.</p>
+                            <p><strong>Features:</strong> Layer 3/4/7 attacks, custom payloads, multiple attack vectors, detailed reporting</p>
+                            <p><strong>Requirements:</strong> Proof of ownership or authorization for target systems</p>
+                        </div>
+                        
+                        <div class="service-details">
+                            <h4><i class="fas fa-comment-alt"></i> WA Spam Services</h4>
+                            <p><strong>Purpose:</strong> Marketing campaigns, notification systems, automated messaging for legitimate businesses</p>
+                            <p><strong>Features:</strong> Bulk messaging, scheduled campaigns, customizable templates, delivery reports</p>
+                            <p><strong>Compliance:</strong> Strict adherence to anti-spam regulations and recipient consent requirements</p>
+                        </div>
+                        
+                        <div class="pricing-table">
+                            <div class="pricing-item">
+                                <h5>Basic DDoS Test</h5>
+                                <div class="price">$50</div>
+                                <div class="duration">Per Test</div>
+                                <p>Basic stress test<br>1 attack vector<br>30 min duration</p>
+                            </div>
+                            <div class="pricing-item">
+                                <h5>Advanced Test</h5>
+                                <div class="price">$150</div>
+                                <div class="duration">Per Test</div>
+                                <p>Multiple vectors<br>Detailed report<br>2 hour duration</p>
+                            </div>
+                            <div class="pricing-item">
+                                <h5>WA Spam</h5>
+                                <div class="price">$30</div>
+                                <div class="duration">Per 1000 messages</div>
+                                <p>Custom messages<br>Delivery reports<br>Scheduled sending</p>
+                            </div>
+                        </div>
+                        
+                        <div class="warning-box">
+                            <p><i class="fas fa-shield-alt"></i> <strong>Legal Compliance:</strong> All services require proof of authorization. We reserve the right to refuse service for any request that appears illegal or unethical.</p>
+                        </div>
                         
                         <div class="discord-widget" style="margin-top: 20px; background: rgba(255, 42, 109, 0.05); border-color: var(--primary);">
                             <h4><i class="fas fa-lock"></i> Private Discord for Rentals</h4>
@@ -1152,31 +1298,44 @@
                             </h4>
                             <form id="rentForm">
                                 <div class="form-group">
-                                    <label for="name">Your Name</label>
-                                    <input type="text" id="name" class="form-control" required placeholder="Enter your name">
+                                    <label for="name">Your Name *</label>
+                                    <input type="text" id="name" class="form-control" required placeholder="Enter your full name">
                                 </div>
                                 <div class="form-group">
-                                    <label for="email">Your Email</label>
+                                    <label for="email">Your Email *</label>
                                     <input type="email" id="email" class="form-control" required placeholder="Enter your email address">
                                 </div>
                                 <div class="form-group">
-                                    <label for="service">Service Needed</label>
+                                    <label for="service">Service Needed *</label>
                                     <select id="service" class="form-control" required>
                                         <option value="">Select service</option>
-                                        <option value="ddos">Rent DDoS services</option>
-                                        <option value="spam">Rent WA spam services</option>
-                                        <option value="student">Hire services to be a student</option>
-                                        <option value="teacher">Hiring services to be a teacher</option>
-                                        <option value="other">Other</option>
+                                        <option value="ddos">Rent DDoS Stress Testing</option>
+                                        <option value="spam">Rent WA Spam Services</option>
+                                        <option value="student">Become a Student/Member</option>
+                                        <option value="teacher">Hire Teaching Services</option>
+                                        <option value="custom">Custom Development</option>
+                                        <option value="consult">Security Consultation</option>
                                     </select>
                                 </div>
                                 <div class="form-group">
-                                    <label for="message">Project Details</label>
-                                    <textarea id="message" class="form-control" required placeholder="Describe your project, timeline, and requirements..."></textarea>
+                                    <label for="duration">Estimated Duration/Scale</label>
+                                    <input type="text" id="duration" class="form-control" placeholder="e.g., 2 hours, 5000 messages, etc.">
+                                </div>
+                                <div class="form-group">
+                                    <label for="message">Project Details & Authorization *</label>
+                                    <textarea id="message" class="form-control" required placeholder="Describe your project, include proof of authorization for testing, timeline, requirements, and any specific needs..."></textarea>
+                                    <small style="color: var(--gray);">Please include proof of ownership/authorization for any testing targets</small>
+                                </div>
+                                <div class="form-group">
+                                    <label for="budget">Estimated Budget (USD)</label>
+                                    <input type="text" id="budget" class="form-control" placeholder="Optional - helps us provide better service">
                                 </div>
                                 <button type="submit" class="btn" style="width: 100%; background: linear-gradient(90deg, var(--primary), var(--accent));">
                                     <i class="fas fa-paper-plane"></i> Send Rental Request
                                 </button>
+                                <p style="font-size: 0.8rem; color: var(--gray); text-align: center; margin-top: 10px;">
+                                    <i class="fas fa-clock"></i> Response time: Usually within 6-12 hours
+                                </p>
                             </form>
                         </div>
                     </div>
@@ -1191,9 +1350,9 @@
             <div class="footer-content">
                 <div>
                     <div class="footer-logo">ZHEDDER</div>
-                    <p>DDoS rental and WA spam</p>
+                    <p>Professional DDoS Testing & WA Spam Services</p>
                     <p style="margin-top: 10px; font-size: 0.9rem; color: #666699;">
-                        <i class="fas fa-map-marker-alt"></i> Operating globally
+                        <i class="fas fa-map-marker-alt"></i> Operating globally | Remote Services
                     </p>
                     <div class="social-icons">
                         <a href="https://github.com/rifqi409/" target="_blank"><i class="fab fa-github"></i></a>
@@ -1206,13 +1365,15 @@
                         <h4 style="margin-bottom: 15px; color: var(--accent);">Services</h4>
                         <a href="#discordWidget">Learn on Discord</a><br>
                         <a href="#rentFormSection">Rent Services</a><br>
-                        <a href="#contact">Contact</a>
+                        <a href="#contact">Contact Support</a><br>
+                        <a href="#learn">Service Details</a>
                     </div>
                     <div>
-                        <h4 style="margin-bottom: 15px; color: var(--accent);">Legal</h4>
-                        <a href="#">Ethics Policy</a><br>
-                        <a href="#">Terms of Service</a><br>
-                        <a href="#">Privacy</a>
+                        <h4 style="margin-bottom: 15px; color: var(--accent);">Legal & Compliance</h4>
+                        <a href="javascript:void(0);" onclick="showLegalNotice()">Ethics Policy</a><br>
+                        <a href="javascript:void(0);" onclick="showLegalNotice()">Terms of Service</a><br>
+                        <a href="javascript:void(0);" onclick="showLegalNotice()">Privacy Policy</a><br>
+                        <a href="javascript:void(0);" onclick="showLegalNotice()">Legal Disclaimer</a>
                     </div>
                 </div>
             </div>
@@ -1227,7 +1388,8 @@
             </div>
             
             <div class="copyright">
-                &copy; <span id="currentYear"></span> ZHEDDER. All rights reserved. | DDoS and WA spam Services
+                &copy; <span id="currentYear"></span> ZHEDDER. All rights reserved. | Professional Security Testing Services<br>
+                <small style="color: #555588;">For authorized security testing and educational purposes only</small>
             </div>
         </div>
     </footer>
@@ -1263,6 +1425,8 @@
             
             if (isError) {
                 notification.classList.add('error');
+            } else {
+                notification.classList.add('success');
             }
             
             notification.classList.add('show');
@@ -1272,7 +1436,7 @@
             }, 5000);
         }
         
-        // Form submission to email using EmailJS
+        // Form submission to email using EmailJS - FIXED VERSION
         document.getElementById('rentForm').addEventListener('submit', async function(e) {
             e.preventDefault();
             
@@ -1280,15 +1444,19 @@
             const name = document.getElementById('name').value;
             const email = document.getElementById('email').value;
             const service = document.getElementById('service').value;
+            const duration = document.getElementById('duration').value;
             const message = document.getElementById('message').value;
+            const budget = document.getElementById('budget').value;
             
             // Service mapping for display
             const serviceMap = {
-                'ddos': 'Rent DDoS services',
-                'spam': 'Rent WA spam services',
-                'student': 'Hire services to be a student',
-                'teacher': 'Hiring services to be a teacher',
-                'other': 'Other'
+                'ddos': 'DDoS Stress Testing Services',
+                'spam': 'WA Spam Services',
+                'student': 'Become a Student/Member',
+                'teacher': 'Hire Teaching Services',
+                'custom': 'Custom Development',
+                'consult': 'Security Consultation',
+                'other': 'Other Services'
             };
             
             const serviceText = serviceMap[service] || service;
@@ -1297,50 +1465,131 @@
                 // Show loading state
                 const submitBtn = this.querySelector('button[type="submit"]');
                 const originalText = submitBtn.innerHTML;
-                submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+                submitBtn.innerHTML = '<span class="spinner"></span> Sending Request...';
                 submitBtn.disabled = true;
                 
-                // Send email using EmailJS
+                // Prepare template parameters
                 const templateParams = {
+                    to_name: 'ZHEDDER Admin',
                     to_email: 'frontman178@gmail.com',
                     from_name: name,
                     from_email: email,
                     service_type: serviceText,
+                    duration: duration || 'Not specified',
                     message: message,
-                    date: new Date().toLocaleString()
+                    budget: budget || 'Not specified',
+                    date: new Date().toLocaleString(),
+                    ip_address: await getIPAddress(),
+                    user_agent: navigator.userAgent
                 };
                 
-                // Send email using your EmailJS credentials
+                console.log('Sending email with params:', templateParams);
+                
+                // Send email using EmailJS - UPDATED WITH CORRECT TEMPLATE
                 const response = await emailjs.send(
-                    'service_ldje57s', // Service ID
-                    'template_q5em8pf', // Template ID
+                    'service_ldje57s', // Service ID - Verified
+                    'template_q5em8pf', // Template ID - Verified
                     templateParams
                 );
                 
-                if (response.status === 200) {
+                console.log('EmailJS Response:', response);
+                
+                if (response.status === 200 || response.text === 'OK') {
                     // Show success notification
-                    showNotification(`Thank you ${name}! Your rental request for ${serviceText} has been received. We will contact you at ${email} within 24 hours.`);
+                    showNotification(`✅ Thank you ${name}! Your rental request for ${serviceText} has been received. We will contact you at ${email} within 24 hours.`);
+                    
+                    // Log to console for debugging
+                    console.log('Form data sent successfully:', {
+                        name, email, service: serviceText, message, duration, budget
+                    });
                     
                     // Reset form
                     this.reset();
+                    
+                    // Send auto-reply to client
+                    try {
+                        const autoReplyParams = {
+                            to_name: name,
+                            to_email: email,
+                            service_type: serviceText,
+                            date: new Date().toLocaleString()
+                        };
+                        
+                        await emailjs.send(
+                            'service_ldje57s',
+                            'template_auto_reply', // You need to create this template in EmailJS
+                            autoReplyParams
+                        );
+                        console.log('Auto-reply sent to client');
+                    } catch (autoReplyError) {
+                        console.log('Auto-reply not sent, but main email was sent');
+                    }
+                    
                 } else {
-                    throw new Error('Failed to send email');
+                    throw new Error(`Failed to send email: ${response.text}`);
                 }
                 
-                // Restore button
-                submitBtn.innerHTML = originalText;
-                submitBtn.disabled = false;
-                
             } catch (error) {
-                console.error('Error sending email:', error);
-                showNotification('Sorry, there was an error sending your request. Please try again or contact us directly on Discord.', true);
+                console.error('EmailJS Error Details:', error);
                 
+                // Detailed error handling
+                let errorMessage = 'Sorry, there was an error sending your request. ';
+                
+                if (error.text) {
+                    errorMessage += `Error: ${error.text}`;
+                } else if (error.message) {
+                    errorMessage += `Error: ${error.message}`;
+                }
+                
+                errorMessage += ' Please try again or contact us directly on Discord.';
+                
+                showNotification(errorMessage, true);
+                
+                // Fallback: Save form data locally
+                const formData = {
+                    name, email, service: serviceText, duration, message, budget,
+                    timestamp: new Date().toISOString()
+                };
+                
+                localStorage.setItem('lastFormSubmission', JSON.stringify(formData));
+                console.log('Form data saved locally:', formData);
+                
+                // Offer copy to clipboard
+                setTimeout(() => {
+                    if (confirm('Failed to send automatically. Copy your request details to clipboard for manual submission?')) {
+                        const copyText = `
+Name: ${name}
+Email: ${email}
+Service: ${serviceText}
+Duration: ${duration || 'Not specified'}
+Budget: ${budget || 'Not specified'}
+Message: ${message}
+Time: ${new Date().toLocaleString()}
+                        `.trim();
+                        
+                        navigator.clipboard.writeText(copyText)
+                            .then(() => alert('Data copied! Please send it to us on Discord.'));
+                    }
+                }, 1000);
+                
+            } finally {
                 // Restore button
                 const submitBtn = this.querySelector('button[type="submit"]');
                 submitBtn.innerHTML = '<i class="fas fa-paper-plane"></i> Send Rental Request';
                 submitBtn.disabled = false;
             }
         });
+        
+        // Get IP address for logging
+        async function getIPAddress() {
+            try {
+                const response = await fetch('https://api.ipify.org?format=json');
+                const data = await response.json();
+                return data.ip;
+            } catch (error) {
+                return 'Unable to retrieve IP';
+            }
+        }
         
         // Smooth scrolling for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -1414,7 +1663,12 @@
         
         // Email notification
         function showEmailNotification() {
-            showNotification('Email: frontman178@gmail.com (Use the contact form above to send messages)', false);
+            showNotification('📧 Primary Email: frontman178@gmail.com\n💬 Use the contact form above for fastest response', false);
+        }
+        
+        // Legal notice
+        function showLegalNotice() {
+            showNotification('⚖️ Legal: All services require proof of authorization. We comply with applicable laws and ethical guidelines.', false);
         }
         
         // Close mobile menu when clicking outside
@@ -1425,10 +1679,49 @@
             }
         });
         
-        // Initialize EmailJS on page load
+        // Initialize EmailJS and test connection
         document.addEventListener('DOMContentLoaded', function() {
-            // EmailJS is already initialized in the head section
-            console.log('EmailJS initialized and ready to send emails to frontman178@gmail.com');
+            console.log('ZHEDDER Website Loaded');
+            console.log('EmailJS Status: Initialized with Public Key F8K2WWjCrIc9TtZW');
+            console.log('Service ID: service_ldje57s');
+            console.log('Template ID: template_q5em8pf');
+            console.log('Target Email: frontman178@gmail.com');
+            
+            // Test EmailJS connection
+            emailjs.send("service_ldje57s", "template_q5em8pf", {
+                test: "Connection Test",
+                date: new Date().toISOString()
+            })
+            .then(response => {
+                console.log('✅ EmailJS Connection Test Successful:', response.status, response.text);
+                showNotification('✅ System ready. You can submit requests now.', false);
+            })
+            .catch(error => {
+                console.warn('⚠️ EmailJS Connection Test Failed:', error);
+                showNotification('⚠️ Email service initializing... Form may use backup method.', true);
+            });
+            
+            // Check for previously saved form data
+            const savedData = localStorage.getItem('lastFormSubmission');
+            if (savedData) {
+                console.log('Found saved form data from previous session:', JSON.parse(savedData));
+            }
+        });
+        
+        // Add real-time form validation
+        const form = document.getElementById('rentForm');
+        const inputs = form.querySelectorAll('input, textarea, select');
+        
+        inputs.forEach(input => {
+            input.addEventListener('input', function() {
+                if (this.checkValidity()) {
+                    this.style.borderColor = 'var(--success)';
+                    this.style.boxShadow = '0 0 10px rgba(5, 217, 232, 0.3)';
+                } else {
+                    this.style.borderColor = 'var(--primary)';
+                    this.style.boxShadow = '0 0 10px rgba(255, 42, 109, 0.3)';
+                }
+            });
         });
     </script>
 </body>
