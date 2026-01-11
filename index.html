@@ -7,13 +7,6 @@
     <meta name="description" content="Zhedder - Professional DDoS protection testing, WA spam services, cybersecurity development and rental services with Tokyo Night aesthetic.">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Roboto+Mono:wght@300;400;500;700&family=Oxanium:wght@300;400;600;800&display=swap" rel="stylesheet">
-    <!-- EmailJS SDK -->
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-    <script type="text/javascript">
-        (function() {
-            emailjs.init("F8K2WWjCrIc9TtZW");
-        })();
-    </script>
     <style>
         :root {
             --primary: #ff2a6d;
@@ -597,44 +590,6 @@
             transform: translateY(-3px);
         }
 
-        /* Contact Form */
-        .contact-form {
-            margin-top: 30px;
-        }
-
-        .form-group {
-            margin-bottom: 25px;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: 500;
-            color: var(--accent);
-        }
-
-        .form-control {
-            width: 100%;
-            padding: 12px 15px;
-            border: 1px solid rgba(0, 206, 255, 0.3);
-            background-color: rgba(13, 2, 33, 0.9);
-            color: white;
-            font-family: 'Roboto Mono', monospace;
-            font-size: 1rem;
-            transition: var(--transition);
-        }
-
-        .form-control:focus {
-            outline: none;
-            border-color: var(--primary);
-            box-shadow: 0 0 15px rgba(255, 42, 109, 0.3);
-        }
-
-        textarea.form-control {
-            min-height: 150px;
-            resize: vertical;
-        }
-
         /* Footer */
         footer {
             background-color: rgba(13, 2, 33, 0.95);
@@ -807,50 +762,115 @@
             font-size: 0.9rem;
         }
 
-        /* Pricing Table */
-        .pricing-table {
+        /* Pricing Grid */
+        .pricing-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
-            margin: 30px 0;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+            margin: 40px 0;
         }
 
-        .pricing-item {
-            background: rgba(0, 206, 255, 0.05);
+        .pricing-card {
+            background: rgba(13, 2, 33, 0.8);
             border: 1px solid rgba(0, 206, 255, 0.3);
-            padding: 20px;
+            padding: 30px;
             text-align: center;
             transition: var(--transition);
+            position: relative;
+            overflow: hidden;
         }
 
-        .pricing-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0, 206, 255, 0.2);
+        .pricing-card:hover {
+            transform: translateY(-10px);
             border-color: var(--accent);
+            box-shadow: 0 0 30px rgba(0, 206, 255, 0.3);
         }
 
-        .pricing-item h5 {
-            color: var(--accent);
+        .pricing-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+        }
+
+        .pricing-card.ddos-basic::before {
+            background: linear-gradient(90deg, #00ceff, #00a8ff);
+        }
+
+        .pricing-card.ddos-advance::before {
+            background: linear-gradient(90deg, #ff2a6d, #ff0080);
+        }
+
+        .pricing-card.spam-basic::before {
+            background: linear-gradient(90deg, #00ff88, #00cc66);
+        }
+
+        .pricing-card.spam-advance::before {
+            background: linear-gradient(90deg, #ffcc00, #ff9900);
+        }
+
+        .pricing-card h3 {
             font-family: 'Orbitron', sans-serif;
-            margin-bottom: 10px;
-            font-size: 1.2rem;
-        }
-
-        .pricing-item .price {
             font-size: 1.8rem;
-            color: var(--primary);
-            font-weight: bold;
-            margin: 15px 0;
-            text-shadow: 0 0 10px rgba(255, 42, 109, 0.5);
+            margin-bottom: 15px;
+            color: var(--accent);
         }
 
-        .pricing-item .duration {
+        .pricing-card .price {
+            font-size: 3rem;
+            font-weight: bold;
+            color: var(--primary);
+            margin: 20px 0;
+            text-shadow: 0 0 15px rgba(255, 42, 109, 0.5);
+        }
+
+        .pricing-card .price-details {
+            font-size: 1.2rem;
             color: #a0a0ff;
-            font-size: 0.9rem;
-            margin-bottom: 15px;
+            margin-bottom: 20px;
+        }
+
+        .pricing-card ul {
+            list-style: none;
+            text-align: left;
+            margin: 25px 0;
+            padding: 0 10px;
+        }
+
+        .pricing-card li {
+            margin-bottom: 12px;
+            padding-left: 25px;
+            position: relative;
+            color: #b0b0ff;
+        }
+
+        .pricing-card li:before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--success);
+            font-weight: bold;
+        }
+
+        .pricing-card .btn {
+            margin-top: 20px;
+            width: 100%;
         }
 
         /* Responsive Design */
+        @media (max-width: 1200px) {
+            .hero h1 {
+                font-size: 3.5rem;
+            }
+            
+            .pricing-grid {
+                gap: 20px;
+            }
+        }
+
         @media (max-width: 992px) {
             .hero {
                 flex-direction: column;
@@ -883,8 +903,14 @@
                 display: none;
             }
             
-            .pricing-table {
+            .pricing-grid {
                 grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            
+            .pricing-card {
+                max-width: 500px;
+                margin: 0 auto;
             }
         }
 
@@ -903,6 +929,18 @@
             
             .column {
                 padding: 30px;
+            }
+            
+            .pricing-card {
+                padding: 25px;
+            }
+            
+            .pricing-card h3 {
+                font-size: 1.6rem;
+            }
+            
+            .pricing-card .price {
+                font-size: 2.5rem;
             }
         }
 
@@ -938,6 +976,18 @@
             
             .mobile-menu {
                 width: 100%;
+            }
+            
+            .pricing-card {
+                padding: 20px;
+            }
+            
+            .pricing-card h3 {
+                font-size: 1.4rem;
+            }
+            
+            .pricing-card .price {
+                font-size: 2.2rem;
             }
         }
 
@@ -1123,7 +1173,7 @@
             <li><a href="#contact">Contact</a></li>
         </ul>
         <div class="quick-actions">
-            <a href="#rentFormSection" class="quick-action-btn primary">Sewa</a>
+            <a href="#pricing" class="quick-action-btn primary">Sewa</a>
             <a href="#discordWidget" class="quick-action-btn">Masuk Grup DC</a>
         </div>
     </div>
@@ -1136,7 +1186,7 @@
                 
                 <!-- Quick Action Buttons (Desktop) -->
                 <div class="quick-actions">
-                    <a href="#rentFormSection" class="quick-action-btn primary">Sewa</a>
+                    <a href="#pricing" class="quick-action-btn primary">Sewa</a>
                     <a href="#discordWidget" class="quick-action-btn">Masuk Grup DC</a>
                 </div>
                 
@@ -1147,7 +1197,7 @@
                 <ul class="nav-links" id="navLinks">
                     <li><a href="#home">Home</a></li>
                     <li><a href="#learn">Learn</a></li>
-                    <li><a href="#rent">Rent</a></li>
+                    <li><a href="#pricing">Pricing</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
             </nav>
@@ -1168,7 +1218,7 @@
                 
                 <div>
                     <a href="#discordWidget" class="btn">Join Discord to Learn</a>
-                    <a href="#rentFormSection" class="btn btn-outline">Rent DDoS/Spam Services</a>
+                    <a href="#pricing" class="btn btn-outline">View Pricing Plans</a>
                 </div>
             </div>
             <div class="hero-image">
@@ -1237,13 +1287,85 @@
                     </div>
                 </div>
                 
-                <!-- Column 2: Rent Services -->
-                <div class="column">
+                <!-- Column 2: Pricing & Services -->
+                <div class="column" id="pricing">
                     <div class="column-title">
-                        <i class="fas fa-server"></i> Rent Services
+                        <i class="fas fa-server"></i> Services & Pricing
                     </div>
                     <div class="column-content">
                         <p>Need specialized cybersecurity services or custom development? Rent our expertise for your legitimate security testing projects.</p>
+                        
+                        <div class="pricing-grid">
+                            <!-- DDoS Basic -->
+                            <div class="pricing-card ddos-basic">
+                                <h3>DDoS Basic</h3>
+                                <div class="price">$10</div>
+                                <div class="price-details">One-time test</div>
+                                <ul>
+                                    <li>30 minutes duration</li>
+                                    <li>Basic Layer 4 attacks</li>
+                                    <li>Up to 1 Gbps bandwidth</li>
+                                    <li>Basic attack report</li>
+                                    <li>Single attack vector</li>
+                                    <li>Email support</li>
+                                </ul>
+                                <a href="https://discord.gg/S3FmVVyj" target="_blank" class="btn">Order Now</a>
+                            </div>
+                            
+                            <!-- DDoS Advance -->
+                            <div class="pricing-card ddos-advance">
+                                <h3>DDoS Advance</h3>
+                                <div class="price">$50</div>
+                                <div class="price-details">Comprehensive test</div>
+                                <ul>
+                                    <li>2 hours duration</li>
+                                    <li>Layer 3, 4 & 7 attacks</li>
+                                    <li>Up to 10 Gbps bandwidth</li>
+                                    <li>Detailed analysis report</li>
+                                    <li>Multiple attack vectors</li>
+                                    <li>Priority Discord support</li>
+                                    <li>Custom payload options</li>
+                                    <li>Performance metrics</li>
+                                </ul>
+                                <a href="https://discord.gg/S3FmVVyj" target="_blank" class="btn">Order Now</a>
+                            </div>
+                            
+                            <!-- Spam Basic -->
+                            <div class="pricing-card spam-basic">
+                                <h3>WA Spam Basic</h3>
+                                <div class="price">$5</div>
+                                <div class="price-details">5x spam sessions</div>
+                                <ul>
+                                    <li>5 separate spam sessions</li>
+                                    <li>Basic message templates</li>
+                                    <li>Up to 100 messages/session</li>
+                                    <li>Basic scheduling</li>
+                                    <li>Standard delivery reports</li>
+                                    <li>24-hour support window</li>
+                                    <li>Manual approval required</li>
+                                </ul>
+                                <a href="https://discord.gg/S3FmVVyj" target="_blank" class="btn">Order Now</a>
+                            </div>
+                            
+                            <!-- Spam Advance -->
+                            <div class="pricing-card spam-advance">
+                                <h3>WA Spam Advance</h3>
+                                <div class="price">$10</div>
+                                <div class="price-details">10x spam sessions</div>
+                                <ul>
+                                    <li>10 separate spam sessions</li>
+                                    <li>Custom message templates</li>
+                                    <li>Up to 200 messages/session</li>
+                                    <li>Advanced scheduling</li>
+                                    <li>Detailed analytics reports</li>
+                                    <li>Priority 12-hour support</li>
+                                    <li>Auto-approval for repeats</li>
+                                    <li>Bulk recipient management</li>
+                                    <li>Message customization</li>
+                                </ul>
+                                <a href="https://discord.gg/S3FmVVyj" target="_blank" class="btn">Order Now</a>
+                            </div>
+                        </div>
                         
                         <div class="service-details">
                             <h4><i class="fas fa-bolt"></i> DDoS Stress Testing Services</h4>
@@ -1259,84 +1381,16 @@
                             <p><strong>Compliance:</strong> Strict adherence to anti-spam regulations and recipient consent requirements</p>
                         </div>
                         
-                        <div class="pricing-table">
-                            <div class="pricing-item">
-                                <h5>Basic DDoS Test</h5>
-                                <div class="price">$50</div>
-                                <div class="duration">Per Test</div>
-                                <p>Basic stress test<br>1 attack vector<br>30 min duration</p>
-                            </div>
-                            <div class="pricing-item">
-                                <h5>Advanced Test</h5>
-                                <div class="price">$150</div>
-                                <div class="duration">Per Test</div>
-                                <p>Multiple vectors<br>Detailed report<br>2 hour duration</p>
-                            </div>
-                            <div class="pricing-item">
-                                <h5>WA Spam</h5>
-                                <div class="price">$30</div>
-                                <div class="duration">Per 1000 messages</div>
-                                <p>Custom messages<br>Delivery reports<br>Scheduled sending</p>
-                            </div>
-                        </div>
-                        
                         <div class="warning-box">
                             <p><i class="fas fa-shield-alt"></i> <strong>Legal Compliance:</strong> All services require proof of authorization. We reserve the right to refuse service for any request that appears illegal or unethical.</p>
                         </div>
                         
                         <div class="discord-widget" style="margin-top: 20px; background: rgba(255, 42, 109, 0.05); border-color: var(--primary);">
-                            <h4><i class="fas fa-lock"></i> Private Discord for Rentals</h4>
-                            <p>Access our exclusive private Discord server for clients who rent our services. Get direct support, priority updates, and collaborate with our team.</p>
+                            <h4><i class="fas fa-lock"></i> Private Discord for Orders</h4>
+                            <p>Join our private Discord server to place orders, get direct support, priority updates, and collaborate with our team.</p>
                             <a href="https://discord.gg/S3FmVVyj" target="_blank" class="discord-link" style="background: linear-gradient(90deg, var(--primary), #ff0080); border-color: var(--primary);">
-                                <i class="fab fa-discord"></i> Join Private Discord (Rent)
+                                <i class="fab fa-discord"></i> Join Private Discord (Orders)
                             </a>
-                        </div>
-                        
-                        <div class="contact-form" id="rentFormSection">
-                            <h4 style="color: var(--accent); margin-bottom: 20px; font-family: 'Orbitron', sans-serif;">
-                                <i class="fas fa-envelope"></i> Contact for Rental
-                            </h4>
-                            <form id="rentForm">
-                                <div class="form-group">
-                                    <label for="name">Your Name *</label>
-                                    <input type="text" id="name" class="form-control" required placeholder="Enter your full name">
-                                </div>
-                                <div class="form-group">
-                                    <label for="email">Your Email *</label>
-                                    <input type="email" id="email" class="form-control" required placeholder="Enter your email address">
-                                </div>
-                                <div class="form-group">
-                                    <label for="service">Service Needed *</label>
-                                    <select id="service" class="form-control" required>
-                                        <option value="">Select service</option>
-                                        <option value="ddos">Rent DDoS Stress Testing</option>
-                                        <option value="spam">Rent WA Spam Services</option>
-                                        <option value="student">Become a Student/Member</option>
-                                        <option value="teacher">Hire Teaching Services</option>
-                                        <option value="custom">Custom Development</option>
-                                        <option value="consult">Security Consultation</option>
-                                    </select>
-                                </div>
-                                <div class="form-group">
-                                    <label for="duration">Estimated Duration/Scale</label>
-                                    <input type="text" id="duration" class="form-control" placeholder="e.g., 2 hours, 5000 messages, etc.">
-                                </div>
-                                <div class="form-group">
-                                    <label for="message">Project Details & Authorization *</label>
-                                    <textarea id="message" class="form-control" required placeholder="Describe your project, include proof of authorization for testing, timeline, requirements, and any specific needs..."></textarea>
-                                    <small style="color: var(--gray);">Please include proof of ownership/authorization for any testing targets</small>
-                                </div>
-                                <div class="form-group">
-                                    <label for="budget">Estimated Budget (USD)</label>
-                                    <input type="text" id="budget" class="form-control" placeholder="Optional - helps us provide better service">
-                                </div>
-                                <button type="submit" class="btn" style="width: 100%; background: linear-gradient(90deg, var(--primary), var(--accent));">
-                                    <i class="fas fa-paper-plane"></i> Send Rental Request
-                                </button>
-                                <p style="font-size: 0.8rem; color: var(--gray); text-align: center; margin-top: 10px;">
-                                    <i class="fas fa-clock"></i> Response time: Usually within 6-12 hours
-                                </p>
-                            </form>
                         </div>
                     </div>
                 </div>
@@ -1364,7 +1418,7 @@
                     <div>
                         <h4 style="margin-bottom: 15px; color: var(--accent);">Services</h4>
                         <a href="#discordWidget">Learn on Discord</a><br>
-                        <a href="#rentFormSection">Rent Services</a><br>
+                        <a href="#pricing">View Pricing</a><br>
                         <a href="#contact">Contact Support</a><br>
                         <a href="#learn">Service Details</a>
                     </div>
@@ -1434,161 +1488,6 @@
             setTimeout(() => {
                 notification.classList.remove('show');
             }, 5000);
-        }
-        
-        // Form submission to email using EmailJS - FIXED VERSION
-        document.getElementById('rentForm').addEventListener('submit', async function(e) {
-            e.preventDefault();
-            
-            // Get form values
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
-            const service = document.getElementById('service').value;
-            const duration = document.getElementById('duration').value;
-            const message = document.getElementById('message').value;
-            const budget = document.getElementById('budget').value;
-            
-            // Service mapping for display
-            const serviceMap = {
-                'ddos': 'DDoS Stress Testing Services',
-                'spam': 'WA Spam Services',
-                'student': 'Become a Student/Member',
-                'teacher': 'Hire Teaching Services',
-                'custom': 'Custom Development',
-                'consult': 'Security Consultation',
-                'other': 'Other Services'
-            };
-            
-            const serviceText = serviceMap[service] || service;
-            
-            try {
-                // Show loading state
-                const submitBtn = this.querySelector('button[type="submit"]');
-                const originalText = submitBtn.innerHTML;
-                submitBtn.innerHTML = '<span class="spinner"></span> Sending Request...';
-                submitBtn.disabled = true;
-                
-                // Prepare template parameters
-                const templateParams = {
-                    to_name: 'ZHEDDER Admin',
-                    to_email: 'frontman178@gmail.com',
-                    from_name: name,
-                    from_email: email,
-                    service_type: serviceText,
-                    duration: duration || 'Not specified',
-                    message: message,
-                    budget: budget || 'Not specified',
-                    date: new Date().toLocaleString(),
-                    ip_address: await getIPAddress(),
-                    user_agent: navigator.userAgent
-                };
-                
-                console.log('Sending email with params:', templateParams);
-                
-                // Send email using EmailJS - UPDATED WITH CORRECT TEMPLATE
-                const response = await emailjs.send(
-                    'service_ldje57s', // Service ID - Verified
-                    'template_q5em8pf', // Template ID - Verified
-                    templateParams
-                );
-                
-                console.log('EmailJS Response:', response);
-                
-                if (response.status === 200 || response.text === 'OK') {
-                    // Show success notification
-                    showNotification(`✅ Thank you ${name}! Your rental request for ${serviceText} has been received. We will contact you at ${email} within 24 hours.`);
-                    
-                    // Log to console for debugging
-                    console.log('Form data sent successfully:', {
-                        name, email, service: serviceText, message, duration, budget
-                    });
-                    
-                    // Reset form
-                    this.reset();
-                    
-                    // Send auto-reply to client
-                    try {
-                        const autoReplyParams = {
-                            to_name: name,
-                            to_email: email,
-                            service_type: serviceText,
-                            date: new Date().toLocaleString()
-                        };
-                        
-                        await emailjs.send(
-                            'service_ldje57s',
-                            'template_auto_reply', // You need to create this template in EmailJS
-                            autoReplyParams
-                        );
-                        console.log('Auto-reply sent to client');
-                    } catch (autoReplyError) {
-                        console.log('Auto-reply not sent, but main email was sent');
-                    }
-                    
-                } else {
-                    throw new Error(`Failed to send email: ${response.text}`);
-                }
-                
-            } catch (error) {
-                console.error('EmailJS Error Details:', error);
-                
-                // Detailed error handling
-                let errorMessage = 'Sorry, there was an error sending your request. ';
-                
-                if (error.text) {
-                    errorMessage += `Error: ${error.text}`;
-                } else if (error.message) {
-                    errorMessage += `Error: ${error.message}`;
-                }
-                
-                errorMessage += ' Please try again or contact us directly on Discord.';
-                
-                showNotification(errorMessage, true);
-                
-                // Fallback: Save form data locally
-                const formData = {
-                    name, email, service: serviceText, duration, message, budget,
-                    timestamp: new Date().toISOString()
-                };
-                
-                localStorage.setItem('lastFormSubmission', JSON.stringify(formData));
-                console.log('Form data saved locally:', formData);
-                
-                // Offer copy to clipboard
-                setTimeout(() => {
-                    if (confirm('Failed to send automatically. Copy your request details to clipboard for manual submission?')) {
-                        const copyText = `
-Name: ${name}
-Email: ${email}
-Service: ${serviceText}
-Duration: ${duration || 'Not specified'}
-Budget: ${budget || 'Not specified'}
-Message: ${message}
-Time: ${new Date().toLocaleString()}
-                        `.trim();
-                        
-                        navigator.clipboard.writeText(copyText)
-                            .then(() => alert('Data copied! Please send it to us on Discord.'));
-                    }
-                }, 1000);
-                
-            } finally {
-                // Restore button
-                const submitBtn = this.querySelector('button[type="submit"]');
-                submitBtn.innerHTML = '<i class="fas fa-paper-plane"></i> Send Rental Request';
-                submitBtn.disabled = false;
-            }
-        });
-        
-        // Get IP address for logging
-        async function getIPAddress() {
-            try {
-                const response = await fetch('https://api.ipify.org?format=json');
-                const data = await response.json();
-                return data.ip;
-            } catch (error) {
-                return 'Unable to retrieve IP';
-            }
         }
         
         // Smooth scrolling for anchor links
@@ -1663,7 +1562,7 @@ Time: ${new Date().toLocaleString()}
         
         // Email notification
         function showEmailNotification() {
-            showNotification('📧 Primary Email: frontman178@gmail.com\n💬 Use the contact form above for fastest response', false);
+            showNotification('📧 Primary Email: frontman178@gmail.com\n💬 Use Discord for fastest response', false);
         }
         
         // Legal notice
@@ -1679,48 +1578,22 @@ Time: ${new Date().toLocaleString()}
             }
         });
         
-        // Initialize EmailJS and test connection
+        // Initialize on page load
         document.addEventListener('DOMContentLoaded', function() {
-            console.log('ZHEDDER Website Loaded');
-            console.log('EmailJS Status: Initialized with Public Key F8K2WWjCrIc9TtZW');
-            console.log('Service ID: service_ldje57s');
-            console.log('Template ID: template_q5em8pf');
-            console.log('Target Email: frontman178@gmail.com');
+            console.log('ZHEDDER Website Loaded Successfully');
             
-            // Test EmailJS connection
-            emailjs.send("service_ldje57s", "template_q5em8pf", {
-                test: "Connection Test",
-                date: new Date().toISOString()
-            })
-            .then(response => {
-                console.log('✅ EmailJS Connection Test Successful:', response.status, response.text);
-                showNotification('✅ System ready. You can submit requests now.', false);
-            })
-            .catch(error => {
-                console.warn('⚠️ EmailJS Connection Test Failed:', error);
-                showNotification('⚠️ Email service initializing... Form may use backup method.', true);
-            });
+            // Check for pricing cards
+            const pricingCards = document.querySelectorAll('.pricing-card');
+            console.log(`Loaded ${pricingCards.length} pricing cards`);
             
-            // Check for previously saved form data
-            const savedData = localStorage.getItem('lastFormSubmission');
-            if (savedData) {
-                console.log('Found saved form data from previous session:', JSON.parse(savedData));
-            }
-        });
-        
-        // Add real-time form validation
-        const form = document.getElementById('rentForm');
-        const inputs = form.querySelectorAll('input, textarea, select');
-        
-        inputs.forEach(input => {
-            input.addEventListener('input', function() {
-                if (this.checkValidity()) {
-                    this.style.borderColor = 'var(--success)';
-                    this.style.boxShadow = '0 0 10px rgba(5, 217, 232, 0.3)';
-                } else {
-                    this.style.borderColor = 'var(--primary)';
-                    this.style.boxShadow = '0 0 10px rgba(255, 42, 109, 0.3)';
-                }
+            // Add click effects to pricing cards
+            pricingCards.forEach(card => {
+                card.addEventListener('click', function() {
+                    this.style.transform = 'scale(1.02)';
+                    setTimeout(() => {
+                        this.style.transform = '';
+                    }, 200);
+                });
             });
         });
     </script>
