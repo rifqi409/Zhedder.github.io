@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ZHEDDER | Ultra DDoS & Spam WA Service</title>
-    <meta name="description" content="Zhedder - Professional DDoS protection testing, WA spam services, cybersecurity development with cybercrime aesthetic.">
+    <title>ZHEDDER | Elite DDoS & WA Spam Services</title>
+    <meta name="description" content="ZHEDDER - Professional DDoS attack services, WA spam operations, cybersecurity tools for offensive security testing.">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Roboto+Mono:wght@300;400;500;700&family=Oxanium:wght@300;400;600;800&display=swap" rel="stylesheet">
     <style>
@@ -72,8 +72,8 @@
             padding: 0 15px;
         }
 
-        /* Laser Effect */
-        .laser-container {
+        /* Horizontal Laser Scanning Effect */
+        .scan-container {
             position: fixed;
             top: 0;
             left: 0;
@@ -84,46 +84,41 @@
             overflow: hidden;
         }
 
-        .laser-beam {
+        .scan-line {
             position: absolute;
-            width: 2px;
-            height: 0;
-            background: linear-gradient(to bottom, 
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, 
                 transparent 0%, 
                 var(--primary) 10%, 
                 var(--primary) 90%, 
                 transparent 100%);
             box-shadow: 
-                0 0 5px var(--primary),
                 0 0 10px var(--primary),
-                0 0 15px var(--primary),
-                0 0 20px var(--primary);
+                0 0 20px var(--primary),
+                0 0 30px var(--primary);
             top: 0;
+            left: 0;
             opacity: 0;
-            animation: laser-sweep 8s infinite;
+            animation: scan-sweep 14s infinite;
         }
 
-        @keyframes laser-sweep {
+        @keyframes scan-sweep {
             0% {
-                height: 0;
                 top: 0;
                 opacity: 0;
             }
+            2% {
+                opacity: 1;
+            }
+            8% {
+                opacity: 1;
+            }
             10% {
-                height: 100vh;
-                opacity: 0.8;
-            }
-            20% {
-                height: 100vh;
-                opacity: 0.8;
-            }
-            30% {
-                height: 0;
                 top: 100vh;
                 opacity: 0;
             }
             100% {
-                height: 0;
                 top: 100vh;
                 opacity: 0;
             }
@@ -186,44 +181,11 @@
             text-shadow: 0 0 10px rgba(255, 42, 42, 0.7);
         }
 
-        .quick-actions {
-            display: flex;
-            gap: 15px;
-            align-items: center;
-        }
-
-        .quick-action-btn {
-            padding: 8px 20px;
-            background: transparent;
-            color: var(--accent);
-            border: 1px solid var(--accent);
-            text-decoration: none;
-            font-family: 'Orbitron', sans-serif;
-            font-size: 0.9rem;
-            transition: var(--transition);
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .quick-action-btn:hover {
-            background: rgba(255, 0, 0, 0.1);
-            box-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
-        }
-
-        .quick-action-btn.primary {
-            background: linear-gradient(90deg, var(--primary), var(--accent));
-            color: white;
-            border: none;
-        }
-
-        .quick-action-btn.primary:hover {
-            box-shadow: 0 0 15px rgba(255, 0, 0, 0.7);
-        }
-
         .nav-links {
             display: flex;
             list-style: none;
             gap: 30px;
+            align-items: center;
         }
 
         .nav-links a {
@@ -256,6 +218,54 @@
 
         .nav-links a:hover::after {
             width: 100%;
+        }
+
+        /* About Menu Item - Special Style */
+        .about-menu {
+            background: rgba(255, 0, 0, 0.1);
+            border: 1px solid var(--primary);
+            border-radius: 3px;
+            padding: 8px 15px;
+            transition: var(--transition);
+        }
+
+        .about-menu:hover {
+            background: rgba(255, 0, 0, 0.2);
+            box-shadow: 0 0 10px var(--primary-glow);
+        }
+
+        .quick-actions {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .quick-action-btn {
+            padding: 8px 20px;
+            background: transparent;
+            color: var(--accent);
+            border: 1px solid var(--accent);
+            text-decoration: none;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 0.9rem;
+            transition: var(--transition);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .quick-action-btn:hover {
+            background: rgba(255, 0, 0, 0.1);
+            box-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
+        }
+
+        .quick-action-btn.primary {
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+            color: white;
+            border: none;
+        }
+
+        .quick-action-btn.primary:hover {
+            box-shadow: 0 0 15px rgba(255, 0, 0, 0.7);
         }
 
         .mobile-menu-btn {
@@ -324,6 +334,77 @@
         .mobile-menu-links a:hover {
             color: var(--primary);
             padding-left: 10px;
+        }
+
+        /* Extended Notification for About */
+        .extended-notification {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0.9);
+            background: rgba(0, 0, 0, 0.95);
+            border: 2px solid var(--primary);
+            color: white;
+            padding: 30px;
+            border-radius: 5px;
+            box-shadow: 0 0 30px rgba(255, 0, 0, 0.7);
+            z-index: 10000;
+            max-width: 600px;
+            width: 90%;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            font-family: 'Roboto Mono', monospace;
+            text-align: left;
+        }
+
+        .extended-notification.show {
+            opacity: 1;
+            visibility: visible;
+            transform: translate(-50%, -50%) scale(1);
+        }
+
+        .extended-notification h3 {
+            color: var(--primary);
+            font-family: 'Orbitron', sans-serif;
+            margin-bottom: 20px;
+            text-align: center;
+            font-size: 1.5rem;
+            text-transform: uppercase;
+            border-bottom: 1px solid var(--primary);
+            padding-bottom: 10px;
+        }
+
+        .extended-notification p {
+            margin-bottom: 15px;
+            line-height: 1.6;
+            color: #ffaaaa;
+        }
+
+        .extended-notification ul {
+            margin-left: 20px;
+            margin-bottom: 20px;
+            color: #ffaaaa;
+        }
+
+        .extended-notification li {
+            margin-bottom: 8px;
+        }
+
+        .close-notification {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            background: none;
+            border: none;
+            color: var(--primary);
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .close-notification:hover {
+            transform: scale(1.2);
         }
 
         /* Hero Section */
@@ -473,6 +554,68 @@
         .btn-outline:hover {
             background: rgba(255, 0, 0, 0.1);
             box-shadow: 0 10px 25px rgba(255, 0, 0, 0.7);
+        }
+
+        /* ILLEGAL WARNING BOX */
+        .illegal-warning {
+            background: rgba(255, 0, 0, 0.15);
+            border: 2px solid var(--primary);
+            padding: 20px;
+            margin: 25px 0;
+            border-left: 5px solid var(--primary);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .illegal-warning::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: repeating-linear-gradient(
+                45deg,
+                transparent,
+                transparent 10px,
+                rgba(255, 0, 0, 0.05) 10px,
+                rgba(255, 0, 0, 0.05) 20px
+            );
+            pointer-events: none;
+        }
+
+        .illegal-warning h4 {
+            color: var(--primary);
+            font-family: 'Orbitron', sans-serif;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            font-size: 1.3rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .illegal-warning h4 i {
+            margin-right: 10px;
+        }
+
+        .illegal-warning p {
+            color: #ffaaaa;
+            margin-bottom: 10px;
+            line-height: 1.6;
+            position: relative;
+            z-index: 1;
+        }
+
+        .illegal-warning ul {
+            margin-left: 20px;
+            color: #ffaaaa;
+            position: relative;
+            z-index: 1;
+        }
+
+        .illegal-warning li {
+            margin-bottom: 8px;
         }
 
         /* Two Columns Section */
@@ -651,6 +794,160 @@
             transform: translateY(-3px);
         }
 
+        /* Pricing Grid */
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+            margin: 30px 0;
+            width: 100%;
+        }
+
+        .pricing-card {
+            background: rgba(0, 0, 0, 0.8);
+            border: 1px solid rgba(255, 0, 0, 0.3);
+            padding: 25px;
+            text-align: center;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            min-height: 650px;
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--accent);
+            box-shadow: 0 0 30px rgba(255, 0, 0, 0.3);
+        }
+
+        .pricing-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+        }
+
+        .pricing-card.ddos-basic::before {
+            background: linear-gradient(90deg, #ff0000, #ff3333);
+        }
+
+        .pricing-card.ddos-advance::before {
+            background: linear-gradient(90deg, #ff0000, #cc0000);
+        }
+
+        .pricing-card.spam-basic::before {
+            background: linear-gradient(90deg, #ff3333, #ff6666);
+        }
+
+        .pricing-card.spam-advance::before {
+            background: linear-gradient(90deg, #ff5500, #ff7733);
+        }
+
+        .pricing-card h3 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.6rem;
+            margin-bottom: 12px;
+            color: var(--accent);
+        }
+
+        .pricing-card .price {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: var(--primary);
+            margin: 15px 0;
+            text-shadow: 0 0 15px rgba(255, 0, 0, 0.5);
+        }
+
+        .pricing-card .price-details {
+            font-size: 1.1rem;
+            color: #ffaaaa;
+            margin-bottom: 15px;
+        }
+
+        .pricing-card ul {
+            list-style: none;
+            text-align: left;
+            margin: 20px 0;
+            padding: 0 5px;
+            flex-grow: 1;
+        }
+
+        .pricing-card li {
+            margin-bottom: 10px;
+            padding-left: 25px;
+            position: relative;
+            color: #ffb0b0;
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+
+        .pricing-card li:before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--success);
+            font-weight: bold;
+        }
+
+        .wallet-info {
+            margin-top: 20px;
+            padding: 15px;
+            background: rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 0, 0, 0.2);
+            border-radius: 5px;
+        }
+
+        .wallet-info h5 {
+            color: var(--accent);
+            font-family: 'Orbitron', sans-serif;
+            margin-bottom: 8px;
+            font-size: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .wallet-info h5 i {
+            margin-right: 8px;
+            color: var(--primary);
+        }
+
+        .wallet-address {
+            font-family: 'Roboto Mono', monospace;
+            font-size: 0.8rem;
+            color: #ffaaaa;
+            background: rgba(0, 0, 0, 0.2);
+            padding: 10px;
+            border-radius: 3px;
+            word-break: break-all;
+            overflow-wrap: break-word;
+            cursor: pointer;
+            transition: var(--transition);
+            border: 1px solid rgba(255, 0, 0, 0.1);
+            margin-bottom: 10px;
+        }
+
+        .wallet-address:hover {
+            background: rgba(0, 0, 0, 0.4);
+            border-color: rgba(255, 0, 0, 0.3);
+        }
+
+        .copy-notice {
+            font-size: 0.75rem;
+            color: #990000;
+            margin-top: 5px;
+        }
+
+        .pricing-card .btn {
+            margin-top: 15px;
+            width: 100%;
+        }
+
         /* Footer */
         footer {
             background-color: rgba(0, 0, 0, 0.95);
@@ -811,172 +1108,102 @@
             margin-right: 10px;
         }
 
-        .warning-box {
-            background: rgba(255, 85, 0, 0.1);
-            border: 1px solid var(--warning);
-            padding: 12px;
-            margin: 15px 0;
-            border-left: 4px solid var(--warning);
+        /* Aura Animations */
+        @keyframes aura {
+            0% {
+                text-shadow: 
+                    0 0 10px var(--primary-glow),
+                    0 0 20px var(--primary-glow),
+                    0 0 30px rgba(255, 0, 0, 0.5),
+                    0 0 40px rgba(255, 0, 0, 0.3);
+            }
+            50% {
+                text-shadow: 
+                    0 0 20px var(--primary-glow),
+                    0 0 30px var(--primary-glow),
+                    0 0 40px rgba(255, 0, 0, 0.7),
+                    0 0 50px rgba(255, 0, 0, 0.5);
+            }
+            100% {
+                text-shadow: 
+                    0 0 10px var(--primary-glow),
+                    0 0 20px var(--primary-glow),
+                    0 0 30px rgba(255, 0, 0, 0.5),
+                    0 0 40px rgba(255, 0, 0, 0.3);
+            }
         }
 
-        .warning-box p {
-            color: #ff5500;
-            margin: 0;
-            font-size: 0.85rem;
+        @keyframes aura-glow {
+            0% {
+                opacity: 0.6;
+                transform: translate(-50%, -50%) scale(1);
+            }
+            50% {
+                opacity: 0.9;
+                transform: translate(-50%, -50%) scale(1.1);
+            }
+            100% {
+                opacity: 0.6;
+                transform: translate(-50%, -50%) scale(1);
+            }
         }
 
-        /* Pricing Grid */
-        .pricing-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 25px;
+        /* Cyber Effects */
+        .cyber-line {
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--primary), var(--accent), transparent);
             margin: 30px 0;
-            width: 100%;
         }
 
-        .pricing-card {
-            background: rgba(0, 0, 0, 0.8);
-            border: 1px solid rgba(255, 0, 0, 0.3);
-            padding: 25px;
-            text-align: center;
-            transition: var(--transition);
-            position: relative;
-            overflow: hidden;
-            display: flex;
-            flex-direction: column;
-            min-height: 650px;
-        }
-
-        .pricing-card:hover {
-            transform: translateY(-10px);
-            border-color: var(--accent);
-            box-shadow: 0 0 30px rgba(255, 0, 0, 0.3);
-        }
-
-        .pricing-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 5px;
-            background: linear-gradient(90deg, var(--primary), var(--accent));
-        }
-
-        .pricing-card.ddos-basic::before {
-            background: linear-gradient(90deg, #ff0000, #ff3333);
-        }
-
-        .pricing-card.ddos-advance::before {
-            background: linear-gradient(90deg, #ff0000, #cc0000);
-        }
-
-        .pricing-card.spam-basic::before {
-            background: linear-gradient(90deg, #ff3333, #ff6666);
-        }
-
-        .pricing-card.spam-advance::before {
-            background: linear-gradient(90deg, #ff5500, #ff7733);
-        }
-
-        .pricing-card h3 {
-            font-family: 'Orbitron', sans-serif;
-            font-size: 1.6rem;
-            margin-bottom: 12px;
-            color: var(--accent);
-        }
-
-        .pricing-card .price {
-            font-size: 2.5rem;
-            font-weight: bold;
-            color: var(--primary);
-            margin: 15px 0;
-            text-shadow: 0 0 15px rgba(255, 0, 0, 0.5);
-        }
-
-        .pricing-card .price-details {
-            font-size: 1.1rem;
-            color: #ffaaaa;
-            margin-bottom: 15px;
-        }
-
-        .pricing-card ul {
-            list-style: none;
-            text-align: left;
-            margin: 20px 0;
-            padding: 0 5px;
-            flex-grow: 1;
-        }
-
-        .pricing-card li {
-            margin-bottom: 10px;
-            padding-left: 25px;
-            position: relative;
-            color: #ffb0b0;
-            font-size: 0.9rem;
-            line-height: 1.5;
-        }
-
-        .pricing-card li:before {
-            content: '✓';
-            position: absolute;
-            left: 0;
+        /* Notification for form submission */
+        .notification {
+            position: fixed;
+            top: 80px;
+            right: 10px;
+            background: rgba(0, 0, 0, 0.95);
+            border: 1px solid var(--success);
             color: var(--success);
-            font-weight: bold;
-        }
-
-        .wallet-info {
-            margin-top: 20px;
-            padding: 15px;
-            background: rgba(0, 0, 0, 0.3);
-            border: 1px solid rgba(255, 0, 0, 0.2);
+            padding: 12px 20px;
             border-radius: 5px;
-        }
-
-        .wallet-info h5 {
-            color: var(--accent);
+            box-shadow: 0 0 15px rgba(255, 51, 51, 0.5);
+            z-index: 10000;
+            transform: translateX(150%);
+            transition: transform 0.4s ease;
             font-family: 'Orbitron', sans-serif;
-            margin-bottom: 8px;
-            font-size: 1rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            max-width: 280px;
+            font-size: 0.9rem;
         }
-
-        .wallet-info h5 i {
-            margin-right: 8px;
+        
+        .notification.show {
+            transform: translateX(0);
+        }
+        
+        .notification.error {
+            border-color: var(--primary);
             color: var(--primary);
+            box-shadow: 0 0 15px rgba(255, 0, 0, 0.5);
         }
-
-        .wallet-address {
-            font-family: 'Roboto Mono', monospace;
-            font-size: 0.8rem;
-            color: #ffaaaa;
-            background: rgba(0, 0, 0, 0.2);
-            padding: 10px;
-            border-radius: 3px;
-            word-break: break-all;
-            overflow-wrap: break-word;
-            cursor: pointer;
-            transition: var(--transition);
-            border: 1px solid rgba(255, 0, 0, 0.1);
-            margin-bottom: 10px;
+        
+        .notification.success {
+            border-color: var(--success);
+            color: var(--success);
+            box-shadow: 0 0 15px rgba(255, 51, 51, 0.5);
         }
-
-        .wallet-address:hover {
-            background: rgba(0, 0, 0, 0.4);
-            border-color: rgba(255, 0, 0, 0.3);
+        
+        /* Loading spinner */
+        .spinner {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            border-top-color: var(--primary);
+            animation: spin 1s ease-in-out infinite;
+            margin-right: 10px;
         }
-
-        .copy-notice {
-            font-size: 0.75rem;
-            color: #990000;
-            margin-top: 5px;
-        }
-
-        .pricing-card .btn {
-            margin-top: 15px;
-            width: 100%;
+        
+        @keyframes spin {
+            to { transform: rotate(360deg); }
         }
 
         /* Responsive Design */
@@ -1187,111 +1414,49 @@
                 font-size: 0.7rem;
             }
         }
-
-        /* Aura Animations */
-        @keyframes aura {
-            0% {
-                text-shadow: 
-                    0 0 10px var(--primary-glow),
-                    0 0 20px var(--primary-glow),
-                    0 0 30px rgba(255, 0, 0, 0.5),
-                    0 0 40px rgba(255, 0, 0, 0.3);
-            }
-            50% {
-                text-shadow: 
-                    0 0 20px var(--primary-glow),
-                    0 0 30px var(--primary-glow),
-                    0 0 40px rgba(255, 0, 0, 0.7),
-                    0 0 50px rgba(255, 0, 0, 0.5);
-            }
-            100% {
-                text-shadow: 
-                    0 0 10px var(--primary-glow),
-                    0 0 20px var(--primary-glow),
-                    0 0 30px rgba(255, 0, 0, 0.5),
-                    0 0 40px rgba(255, 0, 0, 0.3);
-            }
-        }
-
-        @keyframes aura-glow {
-            0% {
-                opacity: 0.6;
-                transform: translate(-50%, -50%) scale(1);
-            }
-            50% {
-                opacity: 0.9;
-                transform: translate(-50%, -50%) scale(1.1);
-            }
-            100% {
-                opacity: 0.6;
-                transform: translate(-50%, -50%) scale(1);
-            }
-        }
-
-        /* Cyber Effects */
-        .cyber-line {
-            height: 2px;
-            background: linear-gradient(90deg, transparent, var(--primary), var(--accent), transparent);
-            margin: 30px 0;
-        }
-
-        /* Notification for form submission */
-        .notification {
-            position: fixed;
-            top: 80px;
-            right: 10px;
-            background: rgba(0, 0, 0, 0.95);
-            border: 1px solid var(--success);
-            color: var(--success);
-            padding: 12px 20px;
-            border-radius: 5px;
-            box-shadow: 0 0 15px rgba(255, 51, 51, 0.5);
-            z-index: 10000;
-            transform: translateX(150%);
-            transition: transform 0.4s ease;
-            font-family: 'Orbitron', sans-serif;
-            max-width: 280px;
-            font-size: 0.9rem;
-        }
-        
-        .notification.show {
-            transform: translateX(0);
-        }
-        
-        .notification.error {
-            border-color: var(--primary);
-            color: var(--primary);
-            box-shadow: 0 0 15px rgba(255, 0, 0, 0.5);
-        }
-        
-        .notification.success {
-            border-color: var(--success);
-            color: var(--success);
-            box-shadow: 0 0 15px rgba(255, 51, 51, 0.5);
-        }
-        
-        /* Loading spinner */
-        .spinner {
-            display: inline-block;
-            width: 20px;
-            height: 20px;
-            border: 3px solid rgba(255, 255, 255, 0.3);
-            border-radius: 50%;
-            border-top-color: var(--primary);
-            animation: spin 1s ease-in-out infinite;
-            margin-right: 10px;
-        }
-        
-        @keyframes spin {
-            to { transform: rotate(360deg); }
-        }
     </style>
 </head>
 <body>
-    <!-- Laser Effect Container -->
-    <div class="laser-container" id="laserContainer"></div>
+    <!-- Horizontal Scanning Line Effect -->
+    <div class="scan-container" id="scanContainer"></div>
     
-    <!-- Notification System -->
+    <!-- Extended Notification for About -->
+    <div class="extended-notification" id="extendedNotification">
+        <button class="close-notification" id="closeNotification">
+            <i class="fas fa-times"></i>
+        </button>
+        <h3><i class="fas fa-exclamation-triangle"></i> ZHEDDER - LEGAL DISCLAIMER</h3>
+        
+        <p><strong>ZHEDDER</strong> provides offensive cybersecurity services including:</p>
+        <ul>
+            <li><strong>DDoS Attack Services</strong> - Distributed Denial of Service attacks against targets</li>
+            <li><strong>WA Spam Operations</strong> - Mass messaging and harassment campaigns</li>
+            <li><strong>Botnet Rentals</strong> - Access to network of compromised devices</li>
+            <li><strong>Cybersecurity Tool Development</strong> - Custom malicious software creation</li>
+        </ul>
+        
+        <div class="illegal-warning" style="margin: 15px 0;">
+            <h4><i class="fas fa-gavel"></i> ILLEGAL ACTIVITY WARNING</h4>
+            <p>All ZHEDDER services constitute criminal activity under multiple jurisdictions:</p>
+            <ul>
+                <li>Computer Fraud and Abuse Act (CFAA) violations</li>
+                <li>Unauthorized computer access (hacking)</li>
+                <li>Distributed Denial of Service attacks (felony in most countries)</li>
+                <li>Harassment and cyberstalking laws</li>
+                <li>Conspiracy to commit computer crimes</li>
+            </ul>
+        </div>
+        
+        <p><strong>Penalties include:</strong> Up to 20 years imprisonment, fines up to $500,000, asset forfeiture, permanent criminal record, and international extradition in some cases.</p>
+        
+        <p><strong>By using our services, you acknowledge:</strong> You are engaging in criminal activity, you assume all legal risks, and ZHEDDER accepts no responsibility for your capture or prosecution.</p>
+        
+        <p style="text-align: center; margin-top: 20px; color: var(--primary); font-weight: bold;">
+            THIS IS ILLEGAL. YOU WILL BE PROSECUTED IF CAUGHT.
+        </p>
+    </div>
+    
+    <!-- Regular Notification System -->
     <div class="notification" id="notification"></div>
     
     <!-- Mobile Menu -->
@@ -1301,6 +1466,7 @@
             <li><a href="#learn">Learn</a></li>
             <li><a href="#pricing">Pricing</a></li>
             <li><a href="#contact">Contact</a></li>
+            <li><a href="javascript:void(0);" id="mobileAboutBtn" class="about-menu">About It</a></li>
         </ul>
         <div class="quick-actions">
             <a href="#pricing" class="quick-action-btn primary">Sewa</a>
@@ -1314,6 +1480,14 @@
             <nav class="navbar">
                 <a href="#" class="logo">ZHEDDER</a>
                 
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#learn">Learn</a></li>
+                    <li><a href="#pricing">Pricing</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="javascript:void(0);" id="aboutBtn" class="about-menu">About It</a></li>
+                </ul>
+                
                 <!-- Quick Action Buttons (Desktop) -->
                 <div class="quick-actions">
                     <a href="#pricing" class="quick-action-btn primary">Sewa</a>
@@ -1323,13 +1497,6 @@
                 <button class="mobile-menu-btn" id="mobileMenuBtn">
                     <i class="fas fa-bars"></i>
                 </button>
-                
-                <ul class="nav-links" id="navLinks">
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#learn">Learn</a></li>
-                    <li><a href="#pricing">Pricing</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
             </nav>
         </div>
     </header>
@@ -1339,21 +1506,23 @@
         <div class="container">
             <div class="hero-content">
                 <h1>Welcome to <span>ZHEDDER</span></h1>
-                <p class="tagline">Ultra Premium DDoS + WA Spam Service</p>
-                <p>Specializing in advanced cybersecurity solutions, penetration testing, stress testing, and custom development for legitimate security testing purposes. We operate at the intersection of technology and security, providing elite services for authorized testing environments.</p>
+                <p class="tagline">Elite DDoS & WA Spam Operations</p>
+                <p>Providing professional offensive cybersecurity services including DDoS attacks, WhatsApp spam campaigns, botnet rentals, and custom tool development for clients who operate outside legal boundaries. We serve those who understand the risks and rewards of the digital underground.</p>
                 
-                <div class="warning-box">
-                    <p><i class="fas fa-exclamation-triangle"></i> <strong>Disclaimer:</strong> Our services are not for play, as they are provided by trusted experts. Think twice before ordering.</p>
+                <div class="illegal-warning">
+                    <h4><i class="fas fa-skull-crossbones"></i> CRIMINAL ENTERPRISE WARNING</h4>
+                    <p>ZHEDDER services are illegal in virtually all jurisdictions. We do not ask for "authorization" or pretend this is for "security testing." This is real cybercrime for those willing to take the risks.</p>
+                    <p><strong>If caught:</strong> You face imprisonment, massive fines, and permanent criminal records. Law enforcement actively monitors these activities.</p>
                 </div>
                 
                 <div>
-                    <a href="#discordWidget" class="btn">Join Discord to Learn</a>
-                    <a href="#pricing" class="btn btn-outline">View Pricing Plans</a>
+                    <a href="#discordWidget" class="btn">Join Underground Community</a>
+                    <a href="#pricing" class="btn btn-outline">View Criminal Services</a>
                 </div>
             </div>
             <div class="hero-image">
                 <div style="background: linear-gradient(135deg, #000000 0%, #1a0000 100%); border: 2px solid var(--accent); padding: 20px; box-shadow: 0 0 40px rgba(255, 0, 0, 0.3);">
-                    <i class="fas fa-user-secret" style="font-size: 6rem; color: var(--primary); text-shadow: 0 0 30px var(--primary-glow);"></i>
+                    <i class="fas fa-skull" style="font-size: 6rem; color: var(--primary); text-shadow: 0 0 30px var(--primary-glow);"></i>
                 </div>
             </div>
         </div>
@@ -1365,54 +1534,61 @@
     <!-- Two Columns Section -->
     <section id="learn" class="columns-section">
         <div class="container">
-            <h2 class="section-title">ZHEDDER Services</h2>
+            <h2 class="section-title">UNDERGROUND SERVICES</h2>
+            
+            <div class="illegal-warning" style="margin-bottom: 40px;">
+                <h4><i class="fas fa-exclamation-circle"></i> CRIMINAL NATURE OF SERVICES</h4>
+                <p>All ZHEDDER services violate national and international laws. We provide these services exclusively to clients who understand they are engaging in criminal activity and accept the consequences.</p>
+                <p><strong>No refunds.</strong> <strong>No guarantees.</strong> <strong>No legal protection.</strong> Once you engage our services, you're on your own.</p>
+            </div>
+            
             <div class="columns-container">
                 <!-- Column 1: Discord Learning -->
                 <div class="column">
                     <div class="column-title">
-                        <i class="fab fa-discord"></i> Join Discord to Learn
+                        <i class="fab fa-discord"></i> Underground Community
                     </div>
                     <div class="column-content">
-                        <p>Join our exclusive Discord community to learn advanced cybersecurity techniques, coding, penetration testing, and legitimate security testing methodologies from industry experts.</p>
+                        <p>Join our exclusive Discord community to learn advanced cybercrime techniques, tool development, evasion methods, and operational security from experienced criminals.</p>
                         <p>Our community offers:</p>
                         <ul style="list-style: none; margin-bottom: 20px;">
                             <li style="margin-bottom: 8px; padding-left: 20px; position: relative;">
                                 <i class="fas fa-check" style="color: var(--success); position: absolute; left: 0;"></i>
-                                Daily tutorials and DoS/DDoS simulations
+                                Real DDoS/DoS attack tutorials and live demonstrations
                             </li>
                             <li style="margin-bottom: 8px; padding-left: 20px; position: relative;">
                                 <i class="fas fa-check" style="color: var(--success); position: absolute; left: 0;"></i>
-                                Create and use DDoS tools
+                                Create and deploy custom malware and botnets
                             </li>
                             <li style="margin-bottom: 8px; padding-left: 20px; position: relative;">
                                 <i class="fas fa-check" style="color: var(--success); position: absolute; left: 0;"></i>
-                                Resource sharing and tool development
+                                Evasion techniques to avoid law enforcement detection
                             </li>
                             <li style="margin-bottom: 8px; padding-left: 20px; position: relative;">
                                 <i class="fas fa-check" style="color: var(--success); position: absolute; left: 0;"></i>
-                                Networking with security professionals
+                                Money laundering and cryptocurrency anonymization
                             </li>
                             <li style="margin-bottom: 8px; padding-left: 20px; position: relative;">
                                 <i class="fas fa-check" style="color: var(--success); position: absolute; left: 0;"></i>
-                                Elite group of red teams
+                                Operational security for criminal enterprises
                             </li>
                         </ul>
                         
                         <div class="discord-widget" id="discordWidget">
-                            <h4><i class="fab fa-discord"></i> Discord Learning Community</h4>
-                            <p>Connect with our community of security researchers and developers. Share knowledge, collaborate on projects, and stay updated with the latest security trends.</p>
+                            <h4><i class="fab fa-discord"></i> Criminal Network</h4>
+                            <p>Connect with our network of cybercriminals, hackers, and digital outlaws. Share techniques, tools, and collaborate on illegal operations.</p>
                             <a href="https://discord.gg/4kBTbWfZcy" target="_blank" class="discord-link">
-                                <i class="fab fa-discord"></i> Join ZHEDDER Discord Group
+                                <i class="fab fa-discord"></i> Join Criminal Discord
                             </a>
                         </div>
                         
                         <div class="service-details">
-                            <h4><i class="fas fa-graduation-cap"></i> What You'll Learn</h4>
-                            <p>• Live DDoS/DoS attacks and simulations</p>
-                            <p>• Network security fundamentals</p>
-                            <p>• Python scripting for security tools</p>
-                            <p>• Ethical penetration testing methodologies</p>
-                            <p>• Security tool development and customization</p>
+                            <h4><i class="fas fa-user-secret"></i> What You'll Learn</h4>
+                            <p>• Conducting DDoS attacks without detection</p>
+                            <p>• Creating and managing botnets</p>
+                            <p>• Advanced spam and harassment campaigns</p>
+                            <p>• Evading law enforcement and cybersecurity firms</p>
+                            <p>• Money laundering through cryptocurrency</p>
                         </div>
                     </div>
                 </div>
@@ -1420,142 +1596,151 @@
                 <!-- Column 2: Pricing & Services -->
                 <div class="column" id="pricing">
                     <div class="column-title">
-                        <i class="fas fa-server"></i> Services & Pricing
+                        <i class="fas fa-server"></i> Criminal Services & Pricing
                     </div>
                     <div class="column-content">
-                        <p>Need specialized cybersecurity services or custom development? Rent our expertise for your legitimate security testing projects.</p>
+                        <p>Need offensive cyber capabilities? Rent our expertise for your illegal operations. No questions asked about your targets or motives.</p>
                         
                         <div class="pricing-grid">
                             <!-- DDoS Basic -->
                             <div class="pricing-card ddos-basic">
                                 <h3>DDoS Basic</h3>
                                 <div class="price">$10</div>
-                                <div class="price-details">One-time test</div>
+                                <div class="price-details">30-minute attack</div>
                                 <ul>
-                                    <li>30 minutes duration</li>
-                                    <li>Basic Layer 4 attacks</li>
+                                    <li>30 minutes sustained attack</li>
+                                    <li>Basic Layer 4 flooding</li>
                                     <li>Up to 1 Gbps bandwidth</li>
-                                    <li>Basic attack report</li>
+                                    <li>Basic attack confirmation</li>
                                     <li>Single attack vector</li>
-                                    <li>Email support</li>
+                                    <li>Encrypted communication</li>
+                                    <li>No logs kept (allegedly)</li>
                                 </ul>
                                 
                                 <div class="wallet-info">
-                                    <h5><i class="fas fa-wallet"></i> Payment Wallet Address</h5>
+                                    <h5><i class="fas fa-wallet"></i> Monero Payment Only</h5>
                                     <div class="wallet-address" onclick="copyWalletAddress()">
                                         47buwhScx8NTV17fVXScxHc3iDNBHziHP4tKEoDD9GkW4bU8cZBUjxvd8WaFZwvQRhFajhQTQXMRNVC2w6LxLEr64snka9M
                                     </div>
                                     <p class="copy-notice">Click to copy wallet address</p>
                                 </div>
                                 
-                                <a href="https://discord.gg/zhNcQyvX" target="_blank" class="btn">Order Now on Discord</a>
+                                <a href="https://discord.gg/zhNcQyvX" target="_blank" class="btn">Order Attack (Discord)</a>
                             </div>
                             
                             <!-- DDoS Advance -->
                             <div class="pricing-card ddos-advance">
                                 <h3>DDoS Advance</h3>
                                 <div class="price">$50</div>
-                                <div class="price-details">Comprehensive test</div>
+                                <div class="price-details">2-hour attack</div>
                                 <ul>
-                                    <li>2 hours duration</li>
-                                    <li>Layer 3, 4 & 7 attacks</li>
+                                    <li>2 hours sustained attack</li>
+                                    <li>Layer 3, 4 & 7 combined</li>
                                     <li>Up to 10 Gbps bandwidth</li>
-                                    <li>Detailed analysis report</li>
+                                    <li>Guaranteed downtime</li>
                                     <li>Multiple attack vectors</li>
-                                    <li>Priority Discord support</li>
+                                    <li>Priority criminal support</li>
                                     <li>Custom payload options</li>
-                                    <li>Performance metrics</li>
+                                    <li>No attribution methods</li>
                                 </ul>
                                 
                                 <div class="wallet-info">
-                                    <h5><i class="fas fa-wallet"></i> Payment Wallet Address</h5>
+                                    <h5><i class="fas fa-wallet"></i> Monero Payment Only</h5>
                                     <div class="wallet-address" onclick="copyWalletAddress()">
                                         47buwhScx8NTV17fVXScxHc3iDNBHziHP4tKEoDD9GkW4bU8cZBUjxvd8WaFZwvQRhFajhQTQXMRNVC2w6LxLEr64snka9M
                                     </div>
                                     <p class="copy-notice">Click to copy wallet address</p>
                                 </div>
                                 
-                                <a href="https://discord.gg/zhNcQyvX" target="_blank" class="btn">Order Now on Discord</a>
+                                <a href="https://discord.gg/zhNcQyvX" target="_blank" class="btn">Order Attack (Discord)</a>
                             </div>
                             
                             <!-- Spam Basic -->
                             <div class="pricing-card spam-basic">
                                 <h3>WA Spam Basic</h3>
                                 <div class="price">$5</div>
-                                <div class="price-details">5x spam sessions</div>
+                                <div class="price-details">Harassment campaign</div>
                                 <ul>
-                                    <li>5 separate spam sessions</li>
-                                    <li>Basic message templates</li>
+                                    <li>5 separate harassment sessions</li>
+                                    <li>Basic threatening messages</li>
                                     <li>Up to 100 messages/session</li>
                                     <li>Basic scheduling</li>
-                                    <li>Standard delivery reports</li>
-                                    <li>24-hour support window</li>
-                                    <li>Manual approval required</li>
+                                    <li>Delivery confirmation</li>
+                                    <li>24-hour operation window</li>
+                                    <li>No target restrictions</li>
                                 </ul>
                                 
                                 <div class="wallet-info">
-                                    <h5><i class="fas fa-wallet"></i> Payment Wallet Address</h5>
+                                    <h5><i class="fas fa-wallet"></i> Monero Payment Only</h5>
                                     <div class="wallet-address" onclick="copyWalletAddress()">
                                         47buwhScx8NTV17fVXScxHc3iDNBHziHP4tKEoDD9GkW4bU8cZBUjxvd8WaFZwvQRhFajhQTQXMRNVC2w6LxLEr64snka9M
                                     </div>
                                     <p class="copy-notice">Click to copy wallet address</p>
                                 </div>
                                 
-                                <a href="https://discord.gg/zhNcQyvX" target="_blank" class="btn">Order Now on Discord</a>
+                                <a href="https://discord.gg/zhNcQyvX" target="_blank" class="btn">Order Spam (Discord)</a>
                             </div>
                             
                             <!-- Spam Advance -->
                             <div class="pricing-card spam-advance">
                                 <h3>WA Spam Advance</h3>
                                 <div class="price">$10</div>
-                                <div class="price-details">10x spam sessions</div>
+                                <div class="price-details">Advanced harassment</div>
                                 <ul>
-                                    <li>10 separate spam sessions</li>
-                                    <li>Custom message templates</li>
+                                    <li>10 separate harassment sessions</li>
+                                    <li>Custom threatening messages</li>
                                     <li>Up to 200 messages/session</li>
-                                    <li>Advanced scheduling</li>
-                                    <li>Detailed analytics reports</li>
+                                    <li>Advanced timing patterns</li>
+                                    <li>Psychological manipulation</li>
                                     <li>Priority 12-hour support</li>
-                                    <li>Auto-approval for repeats</li>
-                                    <li>Bulk recipient management</li>
-                                    <li>Message customization</li>
+                                    <li>Multiple target options</li>
+                                    <li>Image/video spam capability</li>
+                                    <li>No ethical restrictions</li>
                                 </ul>
                                 
                                 <div class="wallet-info">
-                                    <h5><i class="fas fa-wallet"></i> Payment Wallet Address</h5>
+                                    <h5><i class="fas fa-wallet"></i> Monero Payment Only</h5>
                                     <div class="wallet-address" onclick="copyWalletAddress()">
                                         47buwhScx8NTV17fVXScxHc3iDNBHziHP4tKEoDD9GkW4bU8cZBUjxvd8WaFZwvQRhFajhQTQXMRNVC2w6LxLEr64snka9M
                                     </div>
                                     <p class="copy-notice">Click to copy wallet address</p>
                                 </div>
                                 
-                                <a href="https://discord.gg/zhNcQyvX" target="_blank" class="btn">Order Now on Discord</a>
+                                <a href="https://discord.gg/zhNcQyvX" target="_blank" class="btn">Order Spam (Discord)</a>
                             </div>
                         </div>
                         
                         <div class="service-details">
                             <h4><i class="fas fa-bolt"></i> DDoS Attack Services</h4>
-                            <p><strong>Purpose:</strong> Large-scale attacks by Botnets carried out simultaneously.</p>
-                            <p><strong>Features:</strong> Layer 3/4/7 + (Secret combo) attacks, custom payloads, multiple attack vectors, detailed reporting.</p>
-                            <p><strong>Requirements:</strong> Pay the one-time payment and provide the destination address for the attack. </p>
+                            <p><strong>Purpose:</strong> Cripple websites, servers, and online services through coordinated botnet attacks.</p>
+                            <p><strong>Features:</strong> Layer 3/4/7 + custom attack vectors, guaranteed downtime, no attribution methods.</p>
+                            <p><strong>Requirements:</strong> Cryptocurrency payment in advance. Target information. No ethical constraints.</p>
                         </div>
                         
                         <div class="service-details">
                             <h4><i class="fas fa-comment-alt"></i> WA Spam Services</h4>
-                            <p><strong>Purpose:</strong> Aims to distract the target from focusing + increase the target's storage memory.</p>
-                            <p><strong>Features:</strong> Rescaled OTP code spam to annoy.</p>
-                            <p><strong>Requirements:</strong> You must have a reason for wanting to attack your target. And we don't provide spam services for unclear reasons.</p>
+                            <p><strong>Purpose:</strong> Harassment, intimidation, psychological warfare, and disruption of targets.</p>
+                            <p><strong>Features:</strong> Mass messaging, OTP spam, image/video spam, timing patterns for maximum disruption.</p>
+                            <p><strong>Requirements:</strong> Target phone numbers. Clear harassment objectives. No moral objections.</p>
                         </div>
                         
-                        <div class="warning-box">
-                            <p><i class="fas fa-shield-alt"></i> <strong>Legal Compliance:</strong> All services require proof of authorization. We reserve the right to refuse service for any request that appears illegal or unethical.</p>
+                        <div class="illegal-warning" style="margin-top: 20px;">
+                            <h4><i class="fas fa-handcuffs"></i> LEGAL CONSEQUENCES</h4>
+                            <p>Using these services makes you a criminal. Law enforcement actively investigates these activities. If caught, you face:</p>
+                            <ul>
+                                <li>Computer crime charges (5-20 years)</li>
+                                <li>Conspiracy charges (additional 5-10 years)</li>
+                                <li>Civil lawsuits from victims</li>
+                                <li>Asset forfeiture and fines</li>
+                                <li>International extradition in severe cases</li>
+                            </ul>
                         </div>
                         
                         <div class="discord-widget" style="margin-top: 20px; background: rgba(255, 0, 0, 0.05); border-color: var(--primary);">
-                            <h4><i class="fas fa-lock"></i> Private Discord for Orders</h4>
-                            <p>Join our private Discord server to place orders, get direct support, priority updates, and collaborate with our team.</p>
+                            <h4><i class="fas fa-lock"></i> Private Criminal Network</h4>
+                            <p>Join our private Discord server for orders, criminal collaboration, tool sharing, and underground networking.</p>
                             <a href="https://discord.gg/zhNcQyvX" target="_blank" class="discord-link" style="background: linear-gradient(90deg, var(--primary), #cc0000); border-color: var(--primary);">
-                                <i class="fab fa-discord"></i> Join Private Discord (Orders)
+                                <i class="fab fa-discord"></i> Join Criminal Operations
                             </a>
                         </div>
                     </div>
@@ -1570,9 +1755,9 @@
             <div class="footer-content">
                 <div>
                     <div class="footer-logo">ZHEDDER</div>
-                    <p>Professional DDoS Testing & WA Spam Services</p>
+                    <p>Criminal DDoS & WA Spam Operations</p>
                     <p style="margin-top: 10px; font-size: 0.9rem; color: #990000;">
-                        <i class="fas fa-map-marker-alt"></i> Operating globally | Remote Services
+                        <i class="fas fa-map-marker-alt"></i> Underground Network | Global Operations
                     </p>
                     <div class="social-icons">
                         <a href="https://github.com/rifqi409/" target="_blank"><i class="fab fa-github"></i></a>
@@ -1582,34 +1767,34 @@
                 </div>
                 <div class="footer-links">
                     <div>
-                        <h4 style="margin-bottom: 15px; color: var(--accent);">Services</h4>
-                        <a href="#discordWidget">Learn on Discord</a><br>
-                        <a href="#pricing">View Pricing</a><br>
-                        <a href="#contact">Contact Support</a><br>
-                        <a href="#learn">Service Details</a>
+                        <h4 style="margin-bottom: 15px; color: var(--accent);">Criminal Services</h4>
+                        <a href="#discordWidget">Underground Community</a><br>
+                        <a href="#pricing">Criminal Pricing</a><br>
+                        <a href="#contact">Criminal Support</a><br>
+                        <a href="javascript:void(0);" id="footerAboutBtn">Legal Disclaimers</a>
                     </div>
                     <div>
-                        <h4 style="margin-bottom: 15px; color: var(--accent);">Legal & Compliance</h4>
-                        <a href="javascript:void(0);" onclick="showLegalNotice()">Ethics Policy</a><br>
-                        <a href="javascript:void(0);" onclick="showLegalNotice()">Terms of Service</a><br>
-                        <a href="javascript:void(0);" onclick="showLegalNotice()">Privacy Policy</a><br>
-                        <a href="javascript:void(0);" onclick="showLegalNotice()">Legal Disclaimer</a>
+                        <h4 style="margin-bottom: 15px; color: var(--accent);">Legal Warnings</h4>
+                        <a href="javascript:void(0);" onclick="showIllegalNotice()">Criminal Charges</a><br>
+                        <a href="javascript:void(0);" onclick="showIllegalNotice()">Law Enforcement</a><br>
+                        <a href="javascript:void(0);" onclick="showIllegalNotice()">Prison Sentences</a><br>
+                        <a href="javascript:void(0);" onclick="showIllegalNotice()">Asset Forfeiture</a>
                     </div>
                 </div>
             </div>
             
             <div class="discord-contact">
-                <h4><i class="fab fa-discord"></i> Discord Contact</h4>
-                <p>For immediate assistance, contact us on Discord:</p>
+                <h4><i class="fab fa-discord"></i> Criminal Communications</h4>
+                <p>For operational communications, contact via Discord:</p>
                 <p style="font-family: 'Roboto Mono', monospace; background-color: rgba(0,0,0,0.5); padding: 8px; margin: 10px 0; border-left: 3px solid var(--primary); font-size: 0.9rem;">
                     Zhedder409
                 </p>
-                <p style="font-size: 0.85rem; color: #990000;">Response time: Usually within 24 hours</p>
+                <p style="font-size: 0.85rem; color: #990000;">Assume all communications are monitored by law enforcement</p>
             </div>
             
             <div class="copyright">
-                &copy; <span id="currentYear"></span> ZHEDDER. All rights reserved. | Professional Security Testing Services<br>
-                <small style="color: #550000; font-size: 0.8rem;">For authorized security testing and educational purposes only</small>
+                &copy; <span id="currentYear"></span> ZHEDDER CRIMINAL ENTERPRISE. All activities illegal.<br>
+                <small style="color: #550000; font-size: 0.8rem;">This website documents criminal activity. Law enforcement is encouraged to investigate.</small>
             </div>
         </div>
     </footer>
@@ -1656,13 +1841,62 @@
             }, 5000);
         }
         
+        // Extended notification system (20 seconds)
+        const extendedNotification = document.getElementById('extendedNotification');
+        const closeNotification = document.getElementById('closeNotification');
+        const aboutBtn = document.getElementById('aboutBtn');
+        const mobileAboutBtn = document.getElementById('mobileAboutBtn');
+        const footerAboutBtn = document.getElementById('footerAboutBtn');
+        let notificationTimeout;
+        
+        function showExtendedNotification() {
+            extendedNotification.classList.add('show');
+            
+            // Auto-close after 20 seconds
+            clearTimeout(notificationTimeout);
+            notificationTimeout = setTimeout(() => {
+                extendedNotification.classList.remove('show');
+            }, 20000);
+        }
+        
+        function hideExtendedNotification() {
+            extendedNotification.classList.remove('show');
+            clearTimeout(notificationTimeout);
+        }
+        
+        // Event listeners for About buttons
+        if (aboutBtn) {
+            aboutBtn.addEventListener('click', showExtendedNotification);
+        }
+        
+        if (mobileAboutBtn) {
+            mobileAboutBtn.addEventListener('click', () => {
+                showExtendedNotification();
+                mobileMenu.classList.remove('active');
+                mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+            });
+        }
+        
+        if (footerAboutBtn) {
+            footerAboutBtn.addEventListener('click', showExtendedNotification);
+        }
+        
+        closeNotification.addEventListener('click', hideExtendedNotification);
+        
+        // Close extended notification when clicking outside
+        extendedNotification.addEventListener('click', (e) => {
+            if (e.target === extendedNotification) {
+                hideExtendedNotification();
+            }
+        });
+        
         // Copy wallet address to clipboard
         function copyWalletAddress() {
             const walletAddress = '47buwhScx8NTV17fVXScxHc3iDNBHziHP4tKEoDD9GkW4bU8cZBUjxvd8WaFZwvQRhFajhQTQXMRNVC2w6LxLEr64snka9M';
             
             navigator.clipboard.writeText(walletAddress)
                 .then(() => {
-                    showNotification('✅ Wallet address copied to clipboard!', false);
+                    showNotification('✅ Criminal wallet address copied!', false);
                 })
                 .catch(err => {
                     console.error('Failed to copy: ', err);
@@ -1688,44 +1922,39 @@
             });
         });
         
-        // Create laser effect
-        const laserContainer = document.getElementById('laserContainer');
+        // Create horizontal scanning line effect
+        const scanContainer = document.getElementById('scanContainer');
         
-        function createLaserBeam() {
-            // Create multiple laser beams with random positions
-            for (let i = 0; i < 3; i++) {
-                setTimeout(() => {
-                    const laser = document.createElement('div');
-                    laser.classList.add('laser-beam');
-                    
-                    // Random position from 10% to 90%
-                    const position = Math.random() * 80 + 10;
-                    laser.style.left = `${position}%`;
-                    
-                    // Random delay for each beam
-                    laser.style.animationDelay = `${Math.random() * 2}s`;
-                    
-                    // Random width
-                    const width = Math.random() * 3 + 1;
-                    laser.style.width = `${width}px`;
-                    
-                    laserContainer.appendChild(laser);
-                    
-                    // Remove laser after animation completes
-                    setTimeout(() => {
-                        if (laser.parentNode === laserContainer) {
-                            laserContainer.removeChild(laser);
-                        }
-                    }, 8000);
-                }, i * 1000); // Stagger the creation
-            }
+        function createScanLine() {
+            const scanLine = document.createElement('div');
+            scanLine.classList.add('scan-line');
+            
+            // Random delay for each scan line
+            scanLine.style.animationDelay = `${Math.random() * 5}s`;
+            
+            // Random opacity variation
+            const opacity = Math.random() * 0.3 + 0.7;
+            scanLine.style.opacity = opacity.toString();
+            
+            scanContainer.appendChild(scanLine);
+            
+            // Remove scan line after animation completes
+            setTimeout(() => {
+                if (scanLine.parentNode === scanContainer) {
+                    scanContainer.removeChild(scanLine);
+                }
+            }, 14000);
         }
         
-        // Create initial laser beams
-        createLaserBeam();
+        // Create initial scan lines
+        createScanLine();
+        setTimeout(createScanLine, 3000);
+        setTimeout(createScanLine, 6000);
         
-        // Create new laser beams every 8 seconds
-        setInterval(createLaserBeam, 8000);
+        // Create new scan lines periodically
+        setInterval(() => {
+            createScanLine();
+        }, 14000);
         
         // Cyber effect for buttons on hover
         document.querySelectorAll('.btn').forEach(btn => {
@@ -1754,12 +1983,12 @@
         
         // Email notification
         function showEmailNotification() {
-            showNotification('📧 Email: rifqi409@proton.me\n💬 Use Discord for fastest response', false);
+            showNotification('📧 Criminal email: rifqi409@proton.me\n💬 Use encrypted channels for operational security', false);
         }
         
-        // Legal notice
-        function showLegalNotice() {
-            showNotification('⚖️ All services require proof of authorization and comply with ethical guidelines.', false);
+        // Illegal notice
+        function showIllegalNotice() {
+            showNotification('⚖️ These are criminal services with severe legal consequences.', true);
         }
         
         // Close mobile menu when clicking outside
@@ -1772,7 +2001,7 @@
         
         // Initialize on page load
         document.addEventListener('DOMContentLoaded', function() {
-            console.log('ZHEDDER Website Loaded Successfully');
+            console.log('ZHEDDER Criminal Website Loaded');
             
             // Add click effects to pricing cards
             document.querySelectorAll('.pricing-card').forEach(card => {
@@ -1791,6 +2020,11 @@
                     notification.classList.remove('show');
                 }
             }, 5000);
+            
+            // Show illegal warning on page load
+            setTimeout(() => {
+                showNotification('⚠️ WARNING: This website documents criminal activity. Proceed at your own risk.', true);
+            }, 1000);
         });
     </script>
 </body>
